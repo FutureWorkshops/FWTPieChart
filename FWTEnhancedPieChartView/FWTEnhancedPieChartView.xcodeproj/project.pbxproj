@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		07C7BFCF18E44E2A00C27E10 /* FWTPieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C7BFCE18E44E2A00C27E10 /* FWTPieChartView.m */; };
-		07C7BFD218E4512F00C27E10 /* FWTPiePortionLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C7BFD118E4512F00C27E10 /* FWTPiePortionLayer.m */; };
+		07C7BFD218E4512F00C27E10 /* FWTPieChartLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C7BFD118E4512F00C27E10 /* FWTPieChartLayer.m */; };
 		07C7BFD418E45C1B00C27E10 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07C7BFD318E45C1B00C27E10 /* QuartzCore.framework */; };
 		07C7BFDB18E46B1B00C27E10 /* FWTiPadStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07C7BFDA18E46B1B00C27E10 /* FWTiPadStoryboard.storyboard */; };
 		07C7BFDE18E46B6800C27E10 /* FWTPieChartExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C7BFDD18E46B6800C27E10 /* FWTPieChartExampleViewController.m */; };
@@ -43,8 +43,8 @@
 /* Begin PBXFileReference section */
 		07C7BFCD18E44E2A00C27E10 /* FWTPieChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWTPieChartView.h; sourceTree = "<group>"; };
 		07C7BFCE18E44E2A00C27E10 /* FWTPieChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWTPieChartView.m; sourceTree = "<group>"; };
-		07C7BFD018E4512F00C27E10 /* FWTPiePortionLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWTPiePortionLayer.h; sourceTree = "<group>"; };
-		07C7BFD118E4512F00C27E10 /* FWTPiePortionLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWTPiePortionLayer.m; sourceTree = "<group>"; };
+		07C7BFD018E4512F00C27E10 /* FWTPieChartLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWTPieChartLayer.h; sourceTree = "<group>"; };
+		07C7BFD118E4512F00C27E10 /* FWTPieChartLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWTPieChartLayer.m; sourceTree = "<group>"; };
 		07C7BFD318E45C1B00C27E10 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		07C7BFDA18E46B1B00C27E10 /* FWTiPadStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FWTiPadStoryboard.storyboard; sourceTree = "<group>"; };
 		07C7BFDC18E46B6800C27E10 /* FWTPieChartExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWTPieChartExampleViewController.h; sourceTree = "<group>"; };
@@ -101,8 +101,8 @@
 			children = (
 				07C7BFCD18E44E2A00C27E10 /* FWTPieChartView.h */,
 				07C7BFCE18E44E2A00C27E10 /* FWTPieChartView.m */,
-				07C7BFD018E4512F00C27E10 /* FWTPiePortionLayer.h */,
-				07C7BFD118E4512F00C27E10 /* FWTPiePortionLayer.m */,
+				07C7BFD018E4512F00C27E10 /* FWTPieChartLayer.h */,
+				07C7BFD118E4512F00C27E10 /* FWTPieChartLayer.m */,
 			);
 			name = PieChartView;
 			sourceTree = "<group>";
@@ -324,7 +324,7 @@
 			files = (
 				07C7BFCF18E44E2A00C27E10 /* FWTPieChartView.m in Sources */,
 				B7402BD516C26CE70014570E /* main.m in Sources */,
-				07C7BFD218E4512F00C27E10 /* FWTPiePortionLayer.m in Sources */,
+				07C7BFD218E4512F00C27E10 /* FWTPieChartLayer.m in Sources */,
 				B7402C3016C2DD800014570E /* FWTAppDelegate.m in Sources */,
 				07C7BFDE18E46B6800C27E10 /* FWTPieChartExampleViewController.m in Sources */,
 			);

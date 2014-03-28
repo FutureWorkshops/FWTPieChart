@@ -10,8 +10,6 @@
 
 @interface FWTPieChartView : UIView
 
-@property (nonatomic, assign) CGFloat animationCompletionPercent;
-
 - (void)animate;
 
 @end

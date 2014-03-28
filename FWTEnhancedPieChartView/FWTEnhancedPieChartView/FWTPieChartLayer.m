@@ -6,47 +6,64 @@
 //
 //
 
-#import "FWTPiePortionLayer.h"
+#import "FWTPieChartLayer.h"
 
 #import <QuartzCore/QuartzCore.h>
 
 CGFloat FLOAT_M_PI = 3.141592653f;
 
-@interface FWTPiePortionLayer ()
-
-@property (nonatomic, strong) NSArray *values;
-@property (nonatomic, strong) NSArray *colors;
-@property (nonatomic, assign) CGFloat startAngle;
+@interface FWTPieChartLayer ()
 
 @end
 
-@implementation FWTPiePortionLayer
+@implementation FWTPieChartLayer
 
 - (id)init
 {
     self = [super init];
     
     if (self != nil){
+        
         self.needsDisplayOnBoundsChange = YES;
         
-        self->_values = @[@(0.22f),@(0.44f),@(0.34f)];
-        self->_colors = @[[UIColor colorWithRed:22/255.f green:86/255.f blue:219/255.f alpha:1],
-                          [UIColor colorWithRed:235/255.f green:81/255.f blue:29/255.f alpha:1],
-                          [UIColor colorWithRed:98/255.f green:200/255.f blue:24/255.f alpha:1]];
-        
-        self->_startAngle =  -FLOAT_M_PI / 2;
         self->_animationCompletionPercent = 0.f;
+        
+        [CATransaction commit];
     }
     
     return self;
 }
 
+- (id)initWithLayer:(id)layer
+{
+    if ((self = [super initWithLayer:layer]))
+    {
+        self.needsDisplayOnBoundsChange = YES;
+        
+        FWTPieChartLayer *source = (FWTPieChartLayer *)layer;
+        self->_startAngle = source.startAngle;
+        self->_colors = source.colors;
+        self->_values = source.values;
+    }
+    
+    return self;
+}
+
+
 - (void)drawInContext:(CGContextRef)ctx
 {
     [super drawInContext:ctx];
     
+    if (self.values.count == 0){
+        return;
+    }
+    
+    NSLog(@"Completed %.f", self.animationCompletionPercent);
+    
     CGRect rect = CGContextGetClipBoundingBox(ctx);
-    CGContextClearRect(ctx, rect);
+    CGContextClearRect(ctx, rect);\
+    
+    CGContextSaveGState(ctx);
     
     CGPoint center = CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect));
     
@@ -61,9 +78,10 @@ CGFloat FLOAT_M_PI = 3.141592653f;
     CGFloat horizontalLineLength = 17.f;
     
     for (int i = 0; i < self.values.count; i++){
-        CGColorRef segmentColor = ((UIColor*)self.colors[i]).CGColor;
         
-        CGFloat segmentAngle = (maxAngle*((NSNumber*)self.values[i]).floatValue)*(self.animationCompletionPercent/100.f);
+        NSLog(@"Completed %.f iteraction %i", self.animationCompletionPercent, i);
+        CGColorRef segmentColor = ((UIColor*)self.colors[i]).CGColor;
+        CGFloat segmentAngle = (maxAngle*((NSNumber*)self.values[i]).floatValue)*(self.animationCompletionPercent);
         
         //Draw line
         CGContextSetLineWidth(ctx, 3.f);
@@ -120,6 +138,8 @@ CGFloat FLOAT_M_PI = 3.141592653f;
     CGContextAddArc(ctx, center.x, center.y, innerRadius, -FLOAT_M_PI / 2, 2*FLOAT_M_PI, 0);
     CGContextClosePath(ctx);
     CGContextFillPath(ctx);
+    
+    CGContextRestoreGState(ctx);
 }
 
 #pragma mark - CoreAnimation methods
@@ -134,11 +154,9 @@ CGFloat FLOAT_M_PI = 3.141592653f;
 }
 
 - (id<CAAction>)actionForKey:(NSString *)event {
-	if ([event isEqualToString:@"animationCompletionPercent"])
-    {
+	if ([event isEqualToString:@"animationCompletionPercent"]){
         CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:event];
-        animation.duration = 2.f;
-        animation.fromValue = @(self.animationCompletionPercent);
+        animation.duration = .7f;
         return animation;
 	}
 	
@@ -146,7 +164,6 @@ CGFloat FLOAT_M_PI = 3.141592653f;
 }
 
 #pragma mark - Lazy loading
-
 - (NSDictionary*)_innerLetterAttributes
 {
     return @{NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue" size:30.f],

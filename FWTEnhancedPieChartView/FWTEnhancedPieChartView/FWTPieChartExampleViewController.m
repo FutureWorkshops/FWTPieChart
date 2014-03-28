@@ -26,13 +26,11 @@
 {
     [super viewDidAppear:animated];
     
-    [self performAnimation];
 }
 
-- (void)performAnimation
+- (IBAction)_performAnimation:(id)sender
 {
     [self.pieChartView animate];
-    [UIView commitAnimations];
 }
 
 #pragma mark - Lazy loading

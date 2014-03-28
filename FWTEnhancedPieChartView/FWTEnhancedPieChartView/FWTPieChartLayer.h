@@ -8,8 +8,12 @@
 
 #import <QuartzCore/QuartzCore.h>
 
-@interface FWTPiePortionLayer : CALayer
+@interface FWTPieChartLayer : CALayer
 
+@property (nonatomic, strong) NSArray *values;
+@property (nonatomic, strong) NSArray *colors;
+
+@property (nonatomic, assign) CGFloat startAngle;
 @property (nonatomic, assign) CGFloat animationCompletionPercent;
 
 @end

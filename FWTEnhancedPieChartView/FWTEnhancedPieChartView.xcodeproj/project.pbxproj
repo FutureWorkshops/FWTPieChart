@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07C7BFCF18E44E2A00C27E10 /* FWTPieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C7BFCE18E44E2A00C27E10 /* FWTPieChartView.m */; };
+		07C7BFD218E4512F00C27E10 /* FWTPiePortionLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C7BFD118E4512F00C27E10 /* FWTPiePortionLayer.m */; };
+		07C7BFD418E45C1B00C27E10 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07C7BFD318E45C1B00C27E10 /* QuartzCore.framework */; };
+		07C7BFDB18E46B1B00C27E10 /* FWTiPadStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07C7BFDA18E46B1B00C27E10 /* FWTiPadStoryboard.storyboard */; };
+		07C7BFDE18E46B6800C27E10 /* FWTPieChartExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C7BFDD18E46B6800C27E10 /* FWTPieChartExampleViewController.m */; };
 		B7402BC916C26CE70014570E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7402BC816C26CE70014570E /* UIKit.framework */; };
 		B7402BCB16C26CE70014570E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7402BCA16C26CE70014570E /* Foundation.framework */; };
 		B7402BCD16C26CE70014570E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7402BCC16C26CE70014570E /* CoreGraphics.framework */; };
@@ -31,12 +36,20 @@
 			containerPortal = B7402BBB16C26CE70014570E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = B7402BC316C26CE70014570E;
-			remoteInfo = "FWTEnhancedPieChartView";
+			remoteInfo = FWTEnhancedPieChartView;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B7402BC416C26CE70014570E /* FWTEnhancedPieChartView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FWTEnhancedPieChartView.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		07C7BFCD18E44E2A00C27E10 /* FWTPieChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWTPieChartView.h; sourceTree = "<group>"; };
+		07C7BFCE18E44E2A00C27E10 /* FWTPieChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWTPieChartView.m; sourceTree = "<group>"; };
+		07C7BFD018E4512F00C27E10 /* FWTPiePortionLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWTPiePortionLayer.h; sourceTree = "<group>"; };
+		07C7BFD118E4512F00C27E10 /* FWTPiePortionLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWTPiePortionLayer.m; sourceTree = "<group>"; };
+		07C7BFD318E45C1B00C27E10 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		07C7BFDA18E46B1B00C27E10 /* FWTiPadStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FWTiPadStoryboard.storyboard; sourceTree = "<group>"; };
+		07C7BFDC18E46B6800C27E10 /* FWTPieChartExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWTPieChartExampleViewController.h; sourceTree = "<group>"; };
+		07C7BFDD18E46B6800C27E10 /* FWTPieChartExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWTPieChartExampleViewController.m; sourceTree = "<group>"; };
+		B7402BC416C26CE70014570E /* FWTEnhancedPieChartView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FWTEnhancedPieChartView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7402BC816C26CE70014570E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B7402BCA16C26CE70014570E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B7402BCC16C26CE70014570E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -44,18 +57,18 @@
 		B7402BD216C26CE70014570E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B7402BD416C26CE70014570E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B7402BD616C26CE70014570E /* FWTEnhancedPieChartView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FWTEnhancedPieChartView-Prefix.pch"; sourceTree = "<group>"; };
-		B7402BE516C26CE70014570E /* FWTEnhancedPieChartViewTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FWTEnhancedPieChartViewTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7402BE516C26CE70014570E /* FWTEnhancedPieChartViewTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FWTEnhancedPieChartViewTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7402BE616C26CE70014570E /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		B7402BEE16C26CE70014570E /* FWTEnhancedPieChartViewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FWTEnhancedPieChartViewTests-Info.plist"; sourceTree = "<group>"; };
 		B7402BF016C26CE70014570E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		B7402BFD16C26ED80014570E /* FWTEnhancedPieChartViewTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FWTEnhancedPieChartViewTests.h"; sourceTree = "<group>"; };
-		B7402BFE16C26ED80014570E /* FWTEnhancedPieChartViewTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FWTEnhancedPieChartViewTests.m"; sourceTree = "<group>"; };
+		B7402BFD16C26ED80014570E /* FWTEnhancedPieChartViewTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWTEnhancedPieChartViewTests.h; sourceTree = "<group>"; };
+		B7402BFE16C26ED80014570E /* FWTEnhancedPieChartViewTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWTEnhancedPieChartViewTests.m; sourceTree = "<group>"; };
 		B7402C1116C270FC0014570E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		B7402C1216C270FC0014570E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		B7402C1316C270FC0014570E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		B7402C1716C275930014570E /* fw-shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "fw-shared.xcconfig"; sourceTree = "<group>"; };
-		B7402C2E16C2DD800014570E /* FWTAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FWTAppDelegate.h"; sourceTree = "<group>"; };
-		B7402C2F16C2DD800014570E /* FWTAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FWTAppDelegate.m"; sourceTree = "<group>"; };
+		B7402C2E16C2DD800014570E /* FWTAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWTAppDelegate.h; sourceTree = "<group>"; };
+		B7402C2F16C2DD800014570E /* FWTAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWTAppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07C7BFD418E45C1B00C27E10 /* QuartzCore.framework in Frameworks */,
 				B7402BC916C26CE70014570E /* UIKit.framework in Frameworks */,
 				B7402BCB16C26CE70014570E /* Foundation.framework in Frameworks */,
 				B7402BCD16C26CE70014570E /* CoreGraphics.framework in Frameworks */,
@@ -82,6 +96,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07909CD018E5BD2100AE827F /* PieChartView */ = {
+			isa = PBXGroup;
+			children = (
+				07C7BFCD18E44E2A00C27E10 /* FWTPieChartView.h */,
+				07C7BFCE18E44E2A00C27E10 /* FWTPieChartView.m */,
+				07C7BFD018E4512F00C27E10 /* FWTPiePortionLayer.h */,
+				07C7BFD118E4512F00C27E10 /* FWTPiePortionLayer.m */,
+			);
+			name = PieChartView;
+			sourceTree = "<group>";
+		};
 		B7402BB916C26CE70014570E = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +130,7 @@
 		B7402BC716C26CE70014570E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				07C7BFD318E45C1B00C27E10 /* QuartzCore.framework */,
 				B7402BC816C26CE70014570E /* UIKit.framework */,
 				B7402BCA16C26CE70014570E /* Foundation.framework */,
 				B7402BCC16C26CE70014570E /* CoreGraphics.framework */,
@@ -116,11 +142,15 @@
 		B7402BCE16C26CE70014570E /* FWTEnhancedPieChartView */ = {
 			isa = PBXGroup;
 			children = (
+				07C7BFDA18E46B1B00C27E10 /* FWTiPadStoryboard.storyboard */,
+				07909CD018E5BD2100AE827F /* PieChartView */,
+				07C7BFDC18E46B6800C27E10 /* FWTPieChartExampleViewController.h */,
+				07C7BFDD18E46B6800C27E10 /* FWTPieChartExampleViewController.m */,
 				B7402C2E16C2DD800014570E /* FWTAppDelegate.h */,
 				B7402C2F16C2DD800014570E /* FWTAppDelegate.m */,
 				B7402BCF16C26CE70014570E /* Supporting Files */,
 			);
-			path = "FWTEnhancedPieChartView";
+			path = FWTEnhancedPieChartView;
 			sourceTree = "<group>";
 		};
 		B7402BCF16C26CE70014570E /* Supporting Files */ = {
@@ -142,7 +172,7 @@
 				B7402BFE16C26ED80014570E /* FWTEnhancedPieChartViewTests.m */,
 				B7402BED16C26CE70014570E /* Supporting Files */,
 			);
-			path = "FWTEnhancedPieChartViewTests";
+			path = FWTEnhancedPieChartViewTests;
 			sourceTree = "<group>";
 		};
 		B7402BED16C26CE70014570E /* Supporting Files */ = {
@@ -180,8 +210,8 @@
 			);
 			dependencies = (
 			);
-			name = "FWTEnhancedPieChartView";
-			productName = "FWTEnhancedPieChartView";
+			name = FWTEnhancedPieChartView;
+			productName = FWTEnhancedPieChartView;
 			productReference = B7402BC416C26CE70014570E /* FWTEnhancedPieChartView.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -199,8 +229,8 @@
 			dependencies = (
 				B7402BEB16C26CE70014570E /* PBXTargetDependency */,
 			);
-			name = "FWTEnhancedPieChartViewTests";
-			productName = "FWTEnhancedPieChartViewTests";
+			name = FWTEnhancedPieChartViewTests;
+			productName = FWTEnhancedPieChartViewTests;
 			productReference = B7402BE516C26CE70014570E /* FWTEnhancedPieChartViewTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
@@ -238,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7402BD316C26CE70014570E /* InfoPlist.strings in Resources */,
+				07C7BFDB18E46B1B00C27E10 /* FWTiPadStoryboard.storyboard in Resources */,
 				B7402C1416C270FC0014570E /* Default-568h@2x.png in Resources */,
 				B7402C1516C270FC0014570E /* Default.png in Resources */,
 				B7402C1616C270FC0014570E /* Default@2x.png in Resources */,
@@ -291,8 +322,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07C7BFCF18E44E2A00C27E10 /* FWTPieChartView.m in Sources */,
 				B7402BD516C26CE70014570E /* main.m in Sources */,
+				07C7BFD218E4512F00C27E10 /* FWTPiePortionLayer.m in Sources */,
 				B7402C3016C2DD800014570E /* FWTAppDelegate.m in Sources */,
+				07C7BFDE18E46B6800C27E10 /* FWTPieChartExampleViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,7 +406,7 @@
 				INFOPLIST_FILE = "FWTEnhancedPieChartView/Supporting Files/FWTEnhancedPieChartView-Info.plist";
 				INFOPLIST_PREFIX_HEADER = "FWTEnhancedPieChartView/Supporting Files/info.plist.h";
 				INFOPLIST_PREPROCESS = YES;
-				PRODUCT_NAME = "FWTEnhancedPieChartView";
+				PRODUCT_NAME = FWTEnhancedPieChartView;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Testing;
@@ -388,7 +422,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FWTEnhancedPieChartView/Supporting Files/FWTEnhancedPieChartView-Prefix.pch";
 				INFOPLIST_FILE = "FWTEnhancedPieChartViewTests/Supporting Files/FWTEnhancedPieChartViewTests-Info.plist";
-				PRODUCT_NAME = "FWTEnhancedPieChartViewTests";
+				PRODUCT_NAME = FWTEnhancedPieChartViewTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -456,7 +490,7 @@
 				INFOPLIST_FILE = "FWTEnhancedPieChartView/Supporting Files/FWTEnhancedPieChartView-Info.plist";
 				INFOPLIST_PREFIX_HEADER = "FWTEnhancedPieChartView/Supporting Files/info.plist.h";
 				INFOPLIST_PREPROCESS = YES;
-				PRODUCT_NAME = "FWTEnhancedPieChartView";
+				PRODUCT_NAME = FWTEnhancedPieChartView;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -469,7 +503,7 @@
 				INFOPLIST_FILE = "FWTEnhancedPieChartView/Supporting Files/FWTEnhancedPieChartView-Info.plist";
 				INFOPLIST_PREFIX_HEADER = "FWTEnhancedPieChartView/Supporting Files/info.plist.h";
 				INFOPLIST_PREPROCESS = YES;
-				PRODUCT_NAME = "FWTEnhancedPieChartView";
+				PRODUCT_NAME = FWTEnhancedPieChartView;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -485,7 +519,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FWTEnhancedPieChartView/Supporting Files/FWTEnhancedPieChartView-Prefix.pch";
 				INFOPLIST_FILE = "FWTEnhancedPieChartViewTests/Supporting Files/FWTEnhancedPieChartViewTests-Info.plist";
-				PRODUCT_NAME = "FWTEnhancedPieChartViewTests";
+				PRODUCT_NAME = FWTEnhancedPieChartViewTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -502,7 +536,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FWTEnhancedPieChartView/Supporting Files/FWTEnhancedPieChartView-Prefix.pch";
 				INFOPLIST_FILE = "FWTEnhancedPieChartViewTests/Supporting Files/FWTEnhancedPieChartViewTests-Info.plist";
-				PRODUCT_NAME = "FWTEnhancedPieChartViewTests";
+				PRODUCT_NAME = FWTEnhancedPieChartViewTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};

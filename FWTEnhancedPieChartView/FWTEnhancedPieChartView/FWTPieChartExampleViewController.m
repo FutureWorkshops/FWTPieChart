@@ -20,6 +20,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.title = @"Remastered FWTPieChartView";
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -55,7 +57,7 @@
 - (FWTPieChartView*)pieChartView
 {
     if (self->_pieChartView == nil){
-        self->_pieChartView = [[FWTPieChartView alloc] initWithFrame:CGRectMake(340, 220, 640, 340)];
+        self->_pieChartView = [[FWTPieChartView alloc] initWithFrame:CGRectMake(0, 220, 1024, 340)];
     }
     
     if (self->_pieChartView.superview == nil){

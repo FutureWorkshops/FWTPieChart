@@ -48,6 +48,19 @@
     [self.pieChartView reloadAnimated:YES];
 }
 
+- (IBAction)_zoomIn:(id)sender
+{
+    [self.pieChartView setFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.pieChartView.frame)+20)];
+    self.pieChartView.center = self.view.center;
+}
+
+- (IBAction)_zoomOut:(id)sender
+{
+    [self.pieChartView setFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.pieChartView.frame)-20)];
+    
+    self.pieChartView.center = self.view.center;
+}
+
 - (IBAction)_performAnimation:(id)sender
 {
     [self.pieChartView reloadAnimated:YES];
@@ -57,7 +70,8 @@
 - (FWTPieChartView*)pieChartView
 {
     if (self->_pieChartView == nil){
-        self->_pieChartView = [[FWTPieChartView alloc] initWithFrame:CGRectMake(0, 220, 1024, 340)];
+        self->_pieChartView = [[FWTPieChartView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 300)];
+        self->_pieChartView.center = self.view.center;
     }
     
     if (self->_pieChartView.superview == nil){

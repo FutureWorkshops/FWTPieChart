@@ -145,13 +145,13 @@
 			isa = PBXGroup;
 			children = (
 				07C7BFDA18E46B1B00C27E10 /* FWTiPadStoryboard.storyboard */,
+				07C0788218EA22EC007ED00D /* FWTiPhoneStoryboard.storyboard */,
 				07909CD018E5BD2100AE827F /* PieChartView */,
 				07C7BFDC18E46B6800C27E10 /* FWTPieChartExampleViewController.h */,
 				07C7BFDD18E46B6800C27E10 /* FWTPieChartExampleViewController.m */,
 				B7402C2E16C2DD800014570E /* FWTAppDelegate.h */,
 				B7402C2F16C2DD800014570E /* FWTAppDelegate.m */,
 				B7402BCF16C26CE70014570E /* Supporting Files */,
-				07C0788218EA22EC007ED00D /* FWTiPhoneStoryboard.storyboard */,
 			);
 			path = FWTEnhancedPieChartView;
 			sourceTree = "<group>";

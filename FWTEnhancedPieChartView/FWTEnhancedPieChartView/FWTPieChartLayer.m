@@ -84,7 +84,7 @@ CGFloat FLOAT_M_PI = 3.141592653f;
     CGFloat spaceAvailable = outerRadius - innerRadius;
     CGFloat lettersCenterRadius = innerRadius + ((outerRadius-innerRadius)*0.5f);
     
-    CGFloat diagonalLineLength = outerRadius + (CGRectGetMidY(rect)*0.12f);
+    CGFloat diagonalLineLength = outerRadius + (CGRectGetMidY(rect)*0.15f);
     CGFloat horizontalLineLength = (spaceAvailable*0.26f);
     
     for (int i = 0; i < self.values.count; i++){
@@ -170,7 +170,7 @@ CGFloat FLOAT_M_PI = 3.141592653f;
             CGContextSetFillColorWithColor(ctx, [UIColor lightGrayColor].CGColor);
             
             CGPoint textPoint;
-            CGFloat verticalOffset = 3.f;
+            CGFloat verticalOffset = 5.f;
             
             if ([self.outterTexts[i] isEqualToString:@""]){
                 verticalOffset = -(textSize.height*0.5f);

@@ -44,6 +44,8 @@ CGFloat FLOAT_M_PI = 3.141592653f;
         self->_startAngle = source.startAngle;
         self->_colors = source.colors;
         self->_values = source.values;
+        self->_innerTexts = source.innerTexts;
+        self->_outterTexts = source.outterTexts;
         self->_animationCompletionPercent = source.animationCompletionPercent;
     }
     
@@ -54,8 +56,6 @@ CGFloat FLOAT_M_PI = 3.141592653f;
 - (void)drawInContext:(CGContextRef)ctx
 {
     [super drawInContext:ctx];
-    
-    NSArray *letters = @[@"A",@"B",@"C",@"D",@"E"];
     
     if (self.values.count == 0){
         return;
@@ -124,24 +124,17 @@ CGFloat FLOAT_M_PI = 3.141592653f;
         
         //Draw inner letter
         if (((NSNumber*)self.values[i]).floatValue >= 0.06f){
-            CGContextSetTextDrawingMode(ctx, kCGTextFill);
             
             CGContextSetFillColorWithColor(ctx, [UIColor whiteColor].CGColor);
             CGPoint letterCenter = CGPointMake(center.x - 7.f + lettersCenterRadius * cosf(startAngle+(segmentAngle*0.5f)),
                                                center.y - 17.f + lettersCenterRadius * sinf(startAngle+(segmentAngle*0.5f)));
-            CGContextSetTextPosition(ctx, letterCenter.x, letterCenter.y);
-            //CGContextShowText(ctx, (a), 1);
             
             UIGraphicsPushContext(ctx);
-            /*[word drawInRect:layer.bounds
-             withFont:[UIFont systemFontOfSize:32]
-             lineBreakMode:UILineBreakModeWordWrap
-             alignment:UITextAlignmentCenter];*/
             
-            [letters[i] drawAtPoint:letterCenter
-                     forWidth:25.0f
-                     withFont:[UIFont fontWithName:@"HelveticaNeue" size:24.f]
-                lineBreakMode:NSLineBreakByClipping];
+            [self.innerTexts[i] drawAtPoint:letterCenter
+                                   forWidth:25.0f
+                                   withFont:[UIFont fontWithName:@"HelveticaNeue" size:24.f]
+                              lineBreakMode:NSLineBreakByClipping];
             
             UIGraphicsPopContext();
         }

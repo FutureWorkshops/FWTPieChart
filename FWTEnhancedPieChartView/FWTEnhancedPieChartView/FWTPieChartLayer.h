@@ -12,6 +12,8 @@
 
 @property (nonatomic, strong) NSArray *values;
 @property (nonatomic, strong) NSArray *colors;
+@property (nonatomic, strong) NSArray *innerTexts;
+@property (nonatomic, strong) NSArray *outterTexts;
 
 @property (nonatomic, assign) CGFloat startAngle;
 @property (nonatomic, assign) CGFloat animationCompletionPercent;

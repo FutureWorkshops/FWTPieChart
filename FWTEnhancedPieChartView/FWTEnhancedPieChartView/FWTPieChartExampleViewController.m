@@ -29,7 +29,7 @@
     FWTPieChartSegmentData *firstSegment = [FWTPieChartSegmentData pieChartSegmentWithValue:@0.22f
                                                                                       color:[UIColor colorWithRed:22/255.f green:86/255.f blue:219/255.f alpha:1]
                                                                                   innerText:@"A"
-                                                                               andOuterText:@""];
+                                                                               andOuterText:nil];
     FWTPieChartSegmentData *secondSegment = [FWTPieChartSegmentData pieChartSegmentWithValue:@0.44f
                                                                                       color:[UIColor colorWithRed:235/255.f green:81/255.f blue:29/255.f alpha:1]
                                                                                   innerText:@"B"

@@ -102,6 +102,8 @@ CGFloat FLOAT_M_PI_ = 3.141592653f;
     
     pieLayer.values = [self _values];
     pieLayer.colors = [self _colors];
+    pieLayer.innerTexts = [self _innerTexts];
+    pieLayer.outterTexts = [self _outterTexts];
     
     [CATransaction commit];
     
@@ -168,6 +170,8 @@ CGFloat FLOAT_M_PI_ = 3.141592653f;
         portionLayer.startAngle = -FLOAT_M_PI_ / 2;
         portionLayer.values = [self _values];
         portionLayer.colors = [self _colors];
+        portionLayer.innerTexts = [self _innerTexts];
+        portionLayer.outterTexts = [self _outterTexts];
         portionLayer.contentsScale = [UIScreen mainScreen].scale;
         portionLayer.frame = self->_containerLayer.frame;
         

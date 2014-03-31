@@ -9,6 +9,7 @@
 #import "FWTPieChartView.h"
 #import "FWTPieChartLayer.h"
 
+//FWTPieChartSegmentData
 @interface FWTPieChartSegmentData()
 
 @end
@@ -32,13 +33,12 @@
 @end
 
 
-
+//FWTPieChartView
 CGFloat FLOAT_M_PI_ = 3.141592653f;
 
 @interface FWTPieChartView ()
 
 @property (nonatomic, strong) CALayer *containerLayer;
-
 @property (nonatomic, strong) NSArray *segments;
 
 @end
@@ -53,6 +53,15 @@ CGFloat FLOAT_M_PI_ = 3.141592653f;
         self.backgroundColor = [UIColor clearColor];
     }
     return self;
+}
+
+- (void)setFrame:(CGRect)frame
+{
+    [super setFrame:frame];
+    
+    for (CALayer *sublayer in self.containerLayer.sublayers){
+        [sublayer setFrame:self.bounds];
+    }
 }
 
 #pragma mark - Public methods

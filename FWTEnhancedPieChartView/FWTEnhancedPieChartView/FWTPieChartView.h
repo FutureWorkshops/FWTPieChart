@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+//FWTPieChartSegmentData
 @interface FWTPieChartSegmentData : NSObject
 
 @property (nonatomic, strong) NSNumber *value;
@@ -23,7 +24,7 @@
 @end
 
 
-
+//FWTPieChartView
 @interface FWTPieChartView : UIView
 
 @property (nonatomic, strong, readonly) NSArray *segments;

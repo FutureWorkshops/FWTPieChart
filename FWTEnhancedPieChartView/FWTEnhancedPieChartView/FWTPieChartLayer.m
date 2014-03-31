@@ -8,8 +8,6 @@
 
 #import "FWTPieChartLayer.h"
 
-#import <QuartzCore/QuartzCore.h>
-
 CGFloat FLOAT_M_PI = 3.141592653f;
 
 @interface FWTPieChartLayer ()
@@ -71,16 +69,17 @@ CGFloat FLOAT_M_PI = 3.141592653f;
     CGFloat startAngle = self.startAngle;
     CGFloat maxAngle = (FLOAT_M_PI*2);
     
-    CGFloat outerRadius = CGRectGetMidX(rect)-50.f;
-    CGFloat innerRadius = (CGRectGetMidX(rect)-50.f) * 0.5f;
+    CGFloat outerRadius = CGRectGetMidY(rect)-50.f;
+    CGFloat innerRadius = (CGRectGetMidY(rect)-50.f) * 0.5f;
     CGFloat lettersCenterRadius = innerRadius + ((outerRadius-innerRadius)*0.5f);
     
-    CGFloat diagonalLineLength = CGRectGetMidX(rect)-28.f;
+    CGFloat diagonalLineLength = CGRectGetMidY(rect)-28.f;
     CGFloat horizontalLineLength = 17.f;
     
     for (int i = 0; i < self.values.count; i++){
+        CGFloat value = ((NSNumber*)self.values[i]).floatValue;
         CGColorRef segmentColor = ((UIColor*)self.colors[i]).CGColor;
-        CGFloat segmentAngle = (maxAngle*((NSNumber*)self.values[i]).floatValue)*(self.animationCompletionPercent);
+        CGFloat segmentAngle = maxAngle*value*self.animationCompletionPercent;
         CGPoint limit = CGPointMake(center.x + diagonalLineLength * cosf(startAngle+(segmentAngle*0.5f)),
                                     center.y + diagonalLineLength * sinf(startAngle+(segmentAngle*0.5f)));
         
@@ -116,25 +115,75 @@ CGFloat FLOAT_M_PI = 3.141592653f;
         CGContextSetStrokeColorWithColor(ctx, [UIColor whiteColor].CGColor);
         CGContextBeginPath(ctx);
         CGContextMoveToPoint(ctx, center.x, center.y);
-        limit = CGPointMake(center.x + outerRadius * cosf(startAngle+0.011f),
+        CGPoint separatorLimit = CGPointMake(center.x + outerRadius * cosf(startAngle+0.011f),
                             center.y + outerRadius * sinf(startAngle+0.011f));
-        CGContextAddLineToPoint(ctx, limit.x, limit.y);
+        CGContextAddLineToPoint(ctx, separatorLimit.x, separatorLimit.y);
         
         CGContextStrokePath(ctx);
         
         //Draw inner letter
         if (((NSNumber*)self.values[i]).floatValue >= 0.06f){
+            CGSize textSize = [self.innerTexts[i] sizeWithFont:[self _innerLetterFont]];
             
             CGContextSetFillColorWithColor(ctx, [UIColor whiteColor].CGColor);
-            CGPoint letterCenter = CGPointMake(center.x - 7.f + lettersCenterRadius * cosf(startAngle+(segmentAngle*0.5f)),
-                                               center.y - 17.f + lettersCenterRadius * sinf(startAngle+(segmentAngle*0.5f)));
+            CGPoint letterCenter = CGPointMake(center.x - (textSize.width*0.5f) + lettersCenterRadius * cosf(startAngle+(segmentAngle*0.5f)),
+                                               center.y - (textSize.height*0.5f) + lettersCenterRadius * sinf(startAngle+(segmentAngle*0.5f)));
             
             UIGraphicsPushContext(ctx);
             
             [self.innerTexts[i] drawAtPoint:letterCenter
-                                   forWidth:25.0f
-                                   withFont:[UIFont fontWithName:@"HelveticaNeue" size:24.f]
+                                   forWidth:textSize.width
+                                   withFont:[self _innerLetterFont]
                               lineBreakMode:NSLineBreakByClipping];
+            
+            UIGraphicsPopContext();
+        }
+        
+        //Draw outter text
+        if (self.animationCompletionPercent > 0.f){
+            CGSize textSize = [self.outterTexts[i] sizeWithFont:[self _outterLetterFont]];
+            CGContextSetFillColorWithColor(ctx, segmentColor);
+            
+            CGPoint textPoint;
+            
+            if (limit.x > center.x){
+                textPoint = CGPointMake(limit.x+horizontalLineLength+5.f, limit.y-textSize.height+8.f);
+            }
+            else{
+                textPoint = CGPointMake(limit.x-horizontalLineLength-textSize.width-5.f, limit.y-textSize.height+8.f);
+            }
+            
+            UIGraphicsPushContext(ctx);
+            
+            [self.outterTexts[i] drawAtPoint:textPoint
+                                   forWidth:textSize.width
+                                   withFont:[self _outterLetterFont]
+                              lineBreakMode:NSLineBreakByClipping];
+            
+            UIGraphicsPopContext();
+        }
+        
+        //Draw percentage text
+        if (self.animationCompletionPercent > 0.f){
+            NSString *percentText = [NSString stringWithFormat:@"%.0f%%",value*100*self.animationCompletionPercent];
+            CGSize textSize = [percentText sizeWithFont:[self _percentageFont]];
+            CGContextSetFillColorWithColor(ctx, [UIColor lightGrayColor].CGColor);
+            
+            CGPoint textPoint;
+            
+            if (limit.x > center.x){
+                textPoint = CGPointMake(limit.x+horizontalLineLength+5.f, limit.y+3.f);
+            }
+            else{
+                textPoint = CGPointMake(limit.x-horizontalLineLength-textSize.width-5.f, limit.y+3.f);
+            }
+            
+            UIGraphicsPushContext(ctx);
+            
+            [percentText drawAtPoint:textPoint
+                     forWidth:textSize.width
+                     withFont:[self _percentageFont]
+                lineBreakMode:NSLineBreakByClipping];
             
             UIGraphicsPopContext();
         }
@@ -168,7 +217,7 @@ CGFloat FLOAT_M_PI = 3.141592653f;
 {
 	if ([event isEqualToString:@"animationCompletionPercent"]){
         CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:event];
-        animation.duration = .7f;
+        animation.duration = 1.f;
         return animation;
 	}
 	
@@ -176,10 +225,19 @@ CGFloat FLOAT_M_PI = 3.141592653f;
 }
 
 #pragma mark - Lazy loading
-- (NSDictionary*)_innerLetterAttributes
+- (UIFont*)_innerLetterFont
 {
-    return @{NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue" size:30.f],
-             NSForegroundColorAttributeName:[UIColor whiteColor]};
+    return [UIFont fontWithName:@"HelveticaNeue" size:30.f];
+}
+
+- (UIFont*)_outterLetterFont
+{
+    return [UIFont fontWithName:@"HelveticaNeue" size:35.f];
+}
+
+- (UIFont*)_percentageFont
+{
+    return [UIFont fontWithName:@"HelveticaNeue" size:19.f];
 }
 
 @end

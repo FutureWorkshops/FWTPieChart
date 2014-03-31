@@ -8,8 +8,6 @@
 
 #import "FWTPieChartView.h"
 #import "FWTPieChartLayer.h"
-#import <QuartzCore/QuartzCore.h>
-
 
 @interface FWTPieChartSegmentData()
 

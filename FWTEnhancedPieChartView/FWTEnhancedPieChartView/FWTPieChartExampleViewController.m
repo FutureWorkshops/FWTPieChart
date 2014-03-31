@@ -29,15 +29,15 @@
     FWTPieChartSegmentData *firstSegment = [FWTPieChartSegmentData pieChartSegmentWithValue:@0.22f
                                                                                       color:[UIColor colorWithRed:22/255.f green:86/255.f blue:219/255.f alpha:1]
                                                                                   innerText:@"A"
-                                                                               andOuterText:nil];
+                                                                               andOuterText:@"2"];
     FWTPieChartSegmentData *secondSegment = [FWTPieChartSegmentData pieChartSegmentWithValue:@0.44f
                                                                                       color:[UIColor colorWithRed:235/255.f green:81/255.f blue:29/255.f alpha:1]
                                                                                   innerText:@"B"
-                                                                               andOuterText:@""];
+                                                                               andOuterText:@"4"];
     FWTPieChartSegmentData *thirdSegment = [FWTPieChartSegmentData pieChartSegmentWithValue:@0.34f
                                                                                       color:[UIColor colorWithRed:98/255.f green:200/255.f blue:24/255.f alpha:1]
                                                                                   innerText:@"C"
-                                                                               andOuterText:@""];
+                                                                               andOuterText:@"3"];
     
     [self.pieChartView addSegment:firstSegment];
     [self.pieChartView addSegment:secondSegment];
@@ -55,7 +55,7 @@
 - (FWTPieChartView*)pieChartView
 {
     if (self->_pieChartView == nil){
-        self->_pieChartView = [[FWTPieChartView alloc] initWithFrame:CGRectMake(340, 220, 340, 340)];
+        self->_pieChartView = [[FWTPieChartView alloc] initWithFrame:CGRectMake(340, 220, 640, 340)];
     }
     
     if (self->_pieChartView.superview == nil){

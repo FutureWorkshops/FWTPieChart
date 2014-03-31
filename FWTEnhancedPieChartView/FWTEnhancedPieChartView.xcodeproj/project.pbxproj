@@ -243,6 +243,11 @@
 				CLASSPREFIX = FWT;
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "";
+				TargetAttributes = {
+					B7402BC316C26CE70014570E = {
+						DevelopmentTeam = BQHMJ2C6RL;
+					};
+				};
 			};
 			buildConfigurationList = B7402BBE16C26CE70014570E /* Build configuration list for PBXProject "FWTEnhancedPieChartView" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -401,12 +406,15 @@
 		B71B013717280481009B2A61 /* Testing */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Carlos Vidal (22C5BPX9AN)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Carlos Vidal (22C5BPX9AN)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FWTEnhancedPieChartView/Supporting Files/FWTEnhancedPieChartView-Prefix.pch";
 				INFOPLIST_FILE = "FWTEnhancedPieChartView/Supporting Files/FWTEnhancedPieChartView-Info.plist";
 				INFOPLIST_PREFIX_HEADER = "FWTEnhancedPieChartView/Supporting Files/info.plist.h";
 				INFOPLIST_PREPROCESS = YES;
 				PRODUCT_NAME = FWTEnhancedPieChartView;
+				PROVISIONING_PROFILE = "F600AC74-CE4D-4551-A7B4-51DD55B71E4F";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Testing;
@@ -485,12 +493,15 @@
 		B7402BF816C26CE70014570E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Carlos Vidal (22C5BPX9AN)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Carlos Vidal (22C5BPX9AN)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FWTEnhancedPieChartView/Supporting Files/FWTEnhancedPieChartView-Prefix.pch";
 				INFOPLIST_FILE = "FWTEnhancedPieChartView/Supporting Files/FWTEnhancedPieChartView-Info.plist";
 				INFOPLIST_PREFIX_HEADER = "FWTEnhancedPieChartView/Supporting Files/info.plist.h";
 				INFOPLIST_PREPROCESS = YES;
 				PRODUCT_NAME = FWTEnhancedPieChartView;
+				PROVISIONING_PROFILE = "F600AC74-CE4D-4551-A7B4-51DD55B71E4F";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -498,12 +509,15 @@
 		B7402BF916C26CE70014570E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Carlos Vidal (22C5BPX9AN)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Carlos Vidal (22C5BPX9AN)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FWTEnhancedPieChartView/Supporting Files/FWTEnhancedPieChartView-Prefix.pch";
 				INFOPLIST_FILE = "FWTEnhancedPieChartView/Supporting Files/FWTEnhancedPieChartView-Info.plist";
 				INFOPLIST_PREFIX_HEADER = "FWTEnhancedPieChartView/Supporting Files/info.plist.h";
 				INFOPLIST_PREPROCESS = YES;
 				PRODUCT_NAME = FWTEnhancedPieChartView;
+				PROVISIONING_PROFILE = "F600AC74-CE4D-4551-A7B4-51DD55B71E4F";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

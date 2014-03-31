@@ -10,11 +10,38 @@
 #import "FWTPieChartLayer.h"
 #import <QuartzCore/QuartzCore.h>
 
+
+@interface FWTPieChartSegmentData()
+
+@end
+
+@implementation FWTPieChartSegmentData
+
++ (FWTPieChartSegmentData*)pieChartSegmentWithValue:(NSNumber*)value
+                                              color:(UIColor*)color
+                                          innerText:(NSString*)innerText
+                                       andOuterText:(NSString*)outterText
+{
+    FWTPieChartSegmentData *segmentData = [[FWTPieChartSegmentData alloc] init];
+    segmentData.value = value != nil ? value : @(0.f);
+    segmentData.color = color != nil ? color : [UIColor whiteColor];
+    segmentData.innerText = innerText != nil ? innerText : @"";
+    segmentData.outterText = outterText != nil ? outterText : @"";
+    
+    return segmentData;
+}
+
+@end
+
+
+
 CGFloat FLOAT_M_PI_ = 3.141592653f;
 
 @interface FWTPieChartView ()
 
 @property (nonatomic, strong) CALayer *containerLayer;
+
+@property (nonatomic, strong) NSArray *segments;
 
 @end
 
@@ -30,35 +57,107 @@ CGFloat FLOAT_M_PI_ = 3.141592653f;
     return self;
 }
 
-- (void)animate
+#pragma mark - Public methods
+- (void)addSegment:(FWTPieChartSegmentData*)segmentData
 {
-    FWTPieChartLayer *theLayer = self.containerLayer.sublayers.firstObject;
+    NSMutableArray *segmentsTemp = [NSMutableArray arrayWithArray:self.segments];
+    [segmentsTemp addObject:segmentData];
+    
+    self.segments = segmentsTemp;
+}
+
+- (FWTPieChartSegmentData*)addSegmentWithValue:(NSNumber*)value color:(UIColor*)color innerText:(NSString*)innerText andOutterText:(NSString*)outterText
+{
+    FWTPieChartSegmentData *segmentData = [FWTPieChartSegmentData pieChartSegmentWithValue:value color:color innerText:innerText andOuterText:outterText];
+    [self addSegment:segmentData];
+    
+    return segmentData;
+}
+
+- (void)removeSegment:(FWTPieChartSegmentData*)segmentData
+{
+    NSMutableArray *segmentsTemp = [NSMutableArray arrayWithArray:self.segments];
+    
+    if ([segmentsTemp containsObject:segmentData]){
+        [segmentsTemp removeObject:segmentData];
+    }
+    
+    self.segments = segmentsTemp;
+}
+
+- (void)clearSegments
+{
+    NSMutableArray *segmentsTemp = [NSMutableArray arrayWithArray:self.segments];
+    [segmentsTemp removeAllObjects];
+    
+    self.segments = segmentsTemp;
+}
+
+- (void)reloadAnimated:(BOOL)animated
+{
+    FWTPieChartLayer *pieLayer = self.containerLayer.sublayers.firstObject;
     
     [CATransaction begin];
     [CATransaction setDisableActions:YES];
     
-    theLayer.values = @[@(0.22f),@(0.44f),@(0.34f)];
-    theLayer.colors = @[[UIColor colorWithRed:22/255.f green:86/255.f blue:219/255.f alpha:1],
-                        [UIColor colorWithRed:235/255.f green:81/255.f blue:29/255.f alpha:1],
-                        [UIColor colorWithRed:98/255.f green:200/255.f blue:24/255.f alpha:1]];
+    pieLayer.values = [self _values];
+    pieLayer.colors = [self _colors];
     
     [CATransaction commit];
     
     [CATransaction begin];
     [CATransaction setDisableActions:YES];
     
-    CABasicAnimation *animation = (CABasicAnimation *)[theLayer actionForKey:@"animationCompletionPercent"];
+    CABasicAnimation *animation = (CABasicAnimation *)[pieLayer actionForKey:@"animationCompletionPercent"];
     animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-    animation.fromValue = @0.f;
+    animation.fromValue = animated ? @0.f : @1.f;
     animation.toValue = @1.f;
     animation.byValue = @0.1f;
     
-    [theLayer setAnimationCompletionPercent:((NSNumber*)animation.toValue).floatValue];
-    [theLayer addAnimation:animation forKey:@"animationCompletionPercent"];
+    [pieLayer setAnimationCompletionPercent:((NSNumber*)animation.toValue).floatValue];
+    [pieLayer addAnimation:animation forKey:@"animationCompletionPercent"];
     
     [CATransaction commit];
 }
 
+#pragma mark - Private methods
+- (NSArray*)_values
+{
+    NSMutableArray *array = [NSMutableArray array];
+    for (FWTPieChartSegmentData *data in self.segments){
+        [array addObject:data.value];
+    }
+    return array;
+}
+
+- (NSArray*)_colors
+{
+    NSMutableArray *array = [NSMutableArray array];
+    for (FWTPieChartSegmentData *data in self.segments){
+        [array addObject:data.color];
+    }
+    return array;
+}
+
+- (NSArray*)_innerTexts
+{
+    NSMutableArray *array = [NSMutableArray array];
+    for (FWTPieChartSegmentData *data in self.segments){
+        [array addObject:data.innerText];
+    }
+    return array;
+}
+
+- (NSArray*)_outterTexts
+{
+    NSMutableArray *array = [NSMutableArray array];
+    for (FWTPieChartSegmentData *data in self.segments){
+        [array addObject:data.outterText];
+    }
+    return array;
+}
+
+#pragma mark - Lazy loading
 - (CALayer *)containerLayer
 {
     if (self->_containerLayer == nil){
@@ -67,10 +166,8 @@ CGFloat FLOAT_M_PI_ = 3.141592653f;
         
         FWTPieChartLayer *portionLayer = [[FWTPieChartLayer alloc] init];
         portionLayer.startAngle = -FLOAT_M_PI_ / 2;
-        portionLayer.values = @[@(0.22f),@(0.44f),@(0.34f)];
-        portionLayer.colors = @[[UIColor colorWithRed:22/255.f green:86/255.f blue:219/255.f alpha:1],
-                            [UIColor colorWithRed:235/255.f green:81/255.f blue:29/255.f alpha:1],
-                            [UIColor colorWithRed:98/255.f green:200/255.f blue:24/255.f alpha:1]];
+        portionLayer.values = [self _values];
+        portionLayer.colors = [self _colors];
         portionLayer.contentsScale = [UIScreen mainScreen].scale;
         portionLayer.frame = self->_containerLayer.frame;
         

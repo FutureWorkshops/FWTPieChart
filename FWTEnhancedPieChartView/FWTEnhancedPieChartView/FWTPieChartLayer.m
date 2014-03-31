@@ -44,6 +44,7 @@ CGFloat FLOAT_M_PI = 3.141592653f;
         self->_startAngle = source.startAngle;
         self->_colors = source.colors;
         self->_values = source.values;
+        self->_animationCompletionPercent = source.animationCompletionPercent;
     }
     
     return self;
@@ -54,14 +55,14 @@ CGFloat FLOAT_M_PI = 3.141592653f;
 {
     [super drawInContext:ctx];
     
+    NSArray *letters = @[@"A",@"B",@"C",@"D",@"E"];
+    
     if (self.values.count == 0){
         return;
     }
     
-    NSLog(@"Completed %.f", self.animationCompletionPercent);
-    
     CGRect rect = CGContextGetClipBoundingBox(ctx);
-    CGContextClearRect(ctx, rect);\
+    CGContextClearRect(ctx, rect);
     
     CGContextSaveGState(ctx);
     
@@ -78,28 +79,28 @@ CGFloat FLOAT_M_PI = 3.141592653f;
     CGFloat horizontalLineLength = 17.f;
     
     for (int i = 0; i < self.values.count; i++){
-        
-        NSLog(@"Completed %.f iteraction %i", self.animationCompletionPercent, i);
         CGColorRef segmentColor = ((UIColor*)self.colors[i]).CGColor;
         CGFloat segmentAngle = (maxAngle*((NSNumber*)self.values[i]).floatValue)*(self.animationCompletionPercent);
-        
-        //Draw line
-        CGContextSetLineWidth(ctx, 3.f);
-        CGContextSetStrokeColorWithColor(ctx, segmentColor);
-        CGContextBeginPath(ctx);
-        CGContextMoveToPoint(ctx, center.x, center.y);
         CGPoint limit = CGPointMake(center.x + diagonalLineLength * cosf(startAngle+(segmentAngle*0.5f)),
                                     center.y + diagonalLineLength * sinf(startAngle+(segmentAngle*0.5f)));
-        CGContextAddLineToPoint(ctx, limit.x, limit.y);
         
-        if (limit.x > center.x){
-            CGContextAddLineToPoint(ctx, limit.x+horizontalLineLength, limit.y);
+        //Draw line
+        if (self.animationCompletionPercent > 0){
+            CGContextSetLineWidth(ctx, 3.f);
+            CGContextSetStrokeColorWithColor(ctx, segmentColor);
+            CGContextBeginPath(ctx);
+            CGContextMoveToPoint(ctx, center.x, center.y);
+            CGContextAddLineToPoint(ctx, limit.x, limit.y);
+            
+            if (limit.x > center.x){
+                CGContextAddLineToPoint(ctx, limit.x+horizontalLineLength, limit.y);
+            }
+            else{
+                CGContextAddLineToPoint(ctx, limit.x-horizontalLineLength, limit.y);
+            }
+            
+            CGContextStrokePath(ctx);
         }
-        else{
-            CGContextAddLineToPoint(ctx, limit.x-horizontalLineLength, limit.y);
-        }
-        
-        CGContextStrokePath(ctx);
         
         // Draw segment
         CGFloat endAngle = startAngle + segmentAngle;
@@ -115,18 +116,36 @@ CGFloat FLOAT_M_PI = 3.141592653f;
         CGContextSetStrokeColorWithColor(ctx, [UIColor whiteColor].CGColor);
         CGContextBeginPath(ctx);
         CGContextMoveToPoint(ctx, center.x, center.y);
-        limit = CGPointMake(center.x + outerRadius * cosf(startAngle+0.015f),
-                            center.y + outerRadius * sinf(startAngle+0.015f));
+        limit = CGPointMake(center.x + outerRadius * cosf(startAngle+0.011f),
+                            center.y + outerRadius * sinf(startAngle+0.011f));
         CGContextAddLineToPoint(ctx, limit.x, limit.y);
         
         CGContextStrokePath(ctx);
         
         //Draw inner letter
         if (((NSNumber*)self.values[i]).floatValue >= 0.06f){
+            CGContextSetTextDrawingMode(ctx, kCGTextFill);
+            
+            CGContextSetFillColorWithColor(ctx, [UIColor whiteColor].CGColor);
             CGPoint letterCenter = CGPointMake(center.x - 7.f + lettersCenterRadius * cosf(startAngle+(segmentAngle*0.5f)),
-                                               center.y - 16.f + lettersCenterRadius * sinf(startAngle+(segmentAngle*0.5f)));
-            [@"B" drawAtPoint:letterCenter withAttributes:[self _innerLetterAttributes]];
+                                               center.y - 17.f + lettersCenterRadius * sinf(startAngle+(segmentAngle*0.5f)));
+            CGContextSetTextPosition(ctx, letterCenter.x, letterCenter.y);
+            //CGContextShowText(ctx, (a), 1);
+            
+            UIGraphicsPushContext(ctx);
+            /*[word drawInRect:layer.bounds
+             withFont:[UIFont systemFontOfSize:32]
+             lineBreakMode:UILineBreakModeWordWrap
+             alignment:UITextAlignmentCenter];*/
+            
+            [letters[i] drawAtPoint:letterCenter
+                     forWidth:25.0f
+                     withFont:[UIFont fontWithName:@"HelveticaNeue" size:24.f]
+                lineBreakMode:NSLineBreakByClipping];
+            
+            UIGraphicsPopContext();
         }
+        
         startAngle = endAngle;
     }
     
@@ -148,12 +167,12 @@ CGFloat FLOAT_M_PI = 3.141592653f;
     if ([key isEqualToString:@"animationCompletionPercent"]){
         return YES;
     }
-    else{
-        return [super needsDisplayForKey:key];
-    }
+    
+    return [super needsDisplayForKey:key];
 }
 
-- (id<CAAction>)actionForKey:(NSString *)event {
+- (id<CAAction>)actionForKey:(NSString *)event
+{
 	if ([event isEqualToString:@"animationCompletionPercent"]){
         CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:event];
         animation.duration = .7f;

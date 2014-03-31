@@ -16,6 +16,14 @@ CGFloat FLOAT_M_PI = 3.141592653f;
 
 @implementation FWTPieChartLayer
 
+- (void)dealloc
+{
+    self->_values = nil;
+    self->_colors = nil;
+    self->_innerTexts = nil;
+    self->_outterTexts = nil;
+}
+
 - (id)init
 {
     self = [super init];
@@ -59,6 +67,8 @@ CGFloat FLOAT_M_PI = 3.141592653f;
         return;
     }
     
+    NSMutableArray *angles = [NSMutableArray array];
+    
     CGRect rect = CGContextGetClipBoundingBox(ctx);
     CGContextClearRect(ctx, rect);
     
@@ -71,10 +81,11 @@ CGFloat FLOAT_M_PI = 3.141592653f;
     
     CGFloat outerRadius = CGRectGetMidY(rect)-50.f;
     CGFloat innerRadius = (CGRectGetMidY(rect)-50.f) * 0.5f;
+    CGFloat spaceAvailable = outerRadius - innerRadius;
     CGFloat lettersCenterRadius = innerRadius + ((outerRadius-innerRadius)*0.5f);
     
-    CGFloat diagonalLineLength = CGRectGetMidY(rect)-28.f;
-    CGFloat horizontalLineLength = 17.f;
+    CGFloat diagonalLineLength = outerRadius + (CGRectGetMidY(rect)*0.12f);
+    CGFloat horizontalLineLength = (spaceAvailable*0.26f);
     
     for (int i = 0; i < self.values.count; i++){
         CGFloat value = ((NSNumber*)self.values[i]).floatValue;
@@ -85,7 +96,7 @@ CGFloat FLOAT_M_PI = 3.141592653f;
         
         //Draw line
         if (self.animationCompletionPercent > 0){
-            CGContextSetLineWidth(ctx, 3.f);
+            CGContextSetLineWidth(ctx, 2.f);
             CGContextSetStrokeColorWithColor(ctx, segmentColor);
             CGContextBeginPath(ctx);
             CGContextMoveToPoint(ctx, center.x, center.y);
@@ -110,22 +121,9 @@ CGFloat FLOAT_M_PI = 3.141592653f;
         CGContextClosePath(ctx);
         CGContextFillPath(ctx);
         
-        //Draw separator
-        if (value < 1.f){
-            CGContextSetLineWidth(ctx, 3.f);
-            CGContextSetStrokeColorWithColor(ctx, [UIColor whiteColor].CGColor);
-            CGContextBeginPath(ctx);
-            CGContextMoveToPoint(ctx, center.x, center.y);
-            CGPoint separatorLimit = CGPointMake(center.x + outerRadius * cosf(startAngle+0.011f),
-                                center.y + outerRadius * sinf(startAngle+0.011f));
-            CGContextAddLineToPoint(ctx, separatorLimit.x, separatorLimit.y);
-            
-            CGContextStrokePath(ctx);
-        }
-        
         //Draw inner letter
         if (((NSNumber*)self.values[i]).floatValue >= 0.06f){
-            CGSize textSize = [self.innerTexts[i] sizeWithFont:[self _innerLetterFont]];
+            CGSize textSize = [self.innerTexts[i] sizeWithFont:[self _innerLetterFontWithSpaceAvailable:spaceAvailable]];
             
             CGContextSetFillColorWithColor(ctx, [UIColor whiteColor].CGColor);
             CGPoint letterCenter = CGPointMake(center.x - (textSize.width*0.5f) + lettersCenterRadius * cosf(startAngle+(segmentAngle*0.5f)),
@@ -135,7 +133,7 @@ CGFloat FLOAT_M_PI = 3.141592653f;
             
             [self.innerTexts[i] drawAtPoint:letterCenter
                                    forWidth:textSize.width
-                                   withFont:[self _innerLetterFont]
+                                   withFont:[self _innerLetterFontWithSpaceAvailable:spaceAvailable]
                               lineBreakMode:NSLineBreakByClipping];
             
             UIGraphicsPopContext();
@@ -143,7 +141,7 @@ CGFloat FLOAT_M_PI = 3.141592653f;
         
         //Draw outter text
         if (self.animationCompletionPercent > 0.f){
-            CGSize textSize = [self.outterTexts[i] sizeWithFont:[self _outterLetterFont]];
+            CGSize textSize = [self.outterTexts[i] sizeWithFont:[self _outterLetterFontWithSpaceAvailable:spaceAvailable]];
             CGContextSetFillColorWithColor(ctx, segmentColor);
             
             CGPoint textPoint;
@@ -159,7 +157,7 @@ CGFloat FLOAT_M_PI = 3.141592653f;
             
             [self.outterTexts[i] drawAtPoint:textPoint
                                    forWidth:textSize.width
-                                   withFont:[self _outterLetterFont]
+                                   withFont:[self _outterLetterFontWithSpaceAvailable:spaceAvailable]
                               lineBreakMode:NSLineBreakByClipping];
             
             UIGraphicsPopContext();
@@ -168,7 +166,7 @@ CGFloat FLOAT_M_PI = 3.141592653f;
         //Draw percentage text
         if (self.animationCompletionPercent > 0.f){
             NSString *percentText = [NSString stringWithFormat:@"%.0f%%",value*100*self.animationCompletionPercent];
-            CGSize textSize = [percentText sizeWithFont:[self _percentageFont]];
+            CGSize textSize = [percentText sizeWithFont:[self _percentageFontWithSpaceAvailable:spaceAvailable]];
             CGContextSetFillColorWithColor(ctx, [UIColor lightGrayColor].CGColor);
             
             CGPoint textPoint;
@@ -189,21 +187,37 @@ CGFloat FLOAT_M_PI = 3.141592653f;
             
             [percentText drawAtPoint:textPoint
                      forWidth:textSize.width
-                     withFont:[self _percentageFont]
+                     withFont:[self _percentageFontWithSpaceAvailable:spaceAvailable]
                 lineBreakMode:NSLineBreakByClipping];
             
             UIGraphicsPopContext();
         }
         
+        [angles addObject:@(startAngle)];
         startAngle = endAngle;
     }
     
     CGColorRef innerPieColor = [[UIColor whiteColor] CGColor];
+
+    //Draw separators
+    if (angles.count > 0){
+        for (NSNumber *angle in angles){
+            CGContextSetLineWidth(ctx, 2.f);
+            CGContextSetStrokeColorWithColor(ctx, [UIColor whiteColor].CGColor);
+            CGContextBeginPath(ctx);
+            CGContextMoveToPoint(ctx, center.x, center.y);
+            CGPoint separatorLimit = CGPointMake(center.x + outerRadius * cosf(angle.floatValue),
+                                                 center.y + outerRadius * sinf(angle.floatValue));
+            CGContextAddLineToPoint(ctx, separatorLimit.x, separatorLimit.y);
+            
+            CGContextStrokePath(ctx);
+        }
+    }
     
     // Draw inner circle
     CGContextSetFillColorWithColor(ctx, innerPieColor);
     CGContextMoveToPoint(ctx, center.x, center.y);
-    CGContextAddArc(ctx, center.x, center.y, innerRadius, -FLOAT_M_PI / 2, 2*FLOAT_M_PI, 0);
+    CGContextAddArc(ctx, center.x, center.y, innerRadius, -FLOAT_M_PI/2, 2*FLOAT_M_PI, 0);
     CGContextClosePath(ctx);
     CGContextFillPath(ctx);
     
@@ -232,19 +246,19 @@ CGFloat FLOAT_M_PI = 3.141592653f;
 }
 
 #pragma mark - Lazy loading
-- (UIFont*)_innerLetterFont
+- (UIFont*)_innerLetterFontWithSpaceAvailable:(CGFloat)spaceAvaliable
 {
-    return [UIFont fontWithName:@"HelveticaNeue" size:30.f];
+    return [UIFont fontWithName:@"HelveticaNeue" size:spaceAvaliable*0.5f];
 }
 
-- (UIFont*)_outterLetterFont
+- (UIFont*)_outterLetterFontWithSpaceAvailable:(CGFloat)spaceAvaliable
 {
-    return [UIFont fontWithName:@"HelveticaNeue" size:35.f];
+    return [UIFont fontWithName:@"HelveticaNeue" size:spaceAvaliable*0.58f];
 }
 
-- (UIFont*)_percentageFont
+- (UIFont*)_percentageFontWithSpaceAvailable:(CGFloat)spaceAvaliable
 {
-    return [UIFont fontWithName:@"HelveticaNeue" size:19.f];
+    return [UIFont fontWithName:@"HelveticaNeue" size:spaceAvaliable*0.35f];
 }
 
 @end

@@ -111,15 +111,17 @@ CGFloat FLOAT_M_PI = 3.141592653f;
         CGContextFillPath(ctx);
         
         //Draw separator
-        CGContextSetLineWidth(ctx, 3.f);
-        CGContextSetStrokeColorWithColor(ctx, [UIColor whiteColor].CGColor);
-        CGContextBeginPath(ctx);
-        CGContextMoveToPoint(ctx, center.x, center.y);
-        CGPoint separatorLimit = CGPointMake(center.x + outerRadius * cosf(startAngle+0.011f),
-                            center.y + outerRadius * sinf(startAngle+0.011f));
-        CGContextAddLineToPoint(ctx, separatorLimit.x, separatorLimit.y);
-        
-        CGContextStrokePath(ctx);
+        if (value < 1.f){
+            CGContextSetLineWidth(ctx, 3.f);
+            CGContextSetStrokeColorWithColor(ctx, [UIColor whiteColor].CGColor);
+            CGContextBeginPath(ctx);
+            CGContextMoveToPoint(ctx, center.x, center.y);
+            CGPoint separatorLimit = CGPointMake(center.x + outerRadius * cosf(startAngle+0.011f),
+                                center.y + outerRadius * sinf(startAngle+0.011f));
+            CGContextAddLineToPoint(ctx, separatorLimit.x, separatorLimit.y);
+            
+            CGContextStrokePath(ctx);
+        }
         
         //Draw inner letter
         if (((NSNumber*)self.values[i]).floatValue >= 0.06f){
@@ -170,12 +172,17 @@ CGFloat FLOAT_M_PI = 3.141592653f;
             CGContextSetFillColorWithColor(ctx, [UIColor lightGrayColor].CGColor);
             
             CGPoint textPoint;
+            CGFloat verticalOffset = 3.f;
+            
+            if ([self.outterTexts[i] isEqualToString:@""]){
+                verticalOffset = -(textSize.height*0.5f);
+            }
             
             if (limit.x > center.x){
-                textPoint = CGPointMake(limit.x+horizontalLineLength+5.f, limit.y+3.f);
+                textPoint = CGPointMake(limit.x+horizontalLineLength+5.f, limit.y+verticalOffset);
             }
             else{
-                textPoint = CGPointMake(limit.x-horizontalLineLength-textSize.width-5.f, limit.y+3.f);
+                textPoint = CGPointMake(limit.x-horizontalLineLength-textSize.width-5.f, limit.y+verticalOffset);
             }
             
             UIGraphicsPushContext(ctx);

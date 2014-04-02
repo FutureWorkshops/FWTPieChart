@@ -89,6 +89,11 @@ float FLOAT_M_PI = 3.141592653f;
     
     for (int i = 0; i < self.values.count; i++){
         float value = ((NSNumber*)self.values[i]).floatValue;
+        
+        if (value == 0.f){
+            continue;
+        }
+        
         CGColorRef segmentColor = ((UIColor*)self.colors[i]).CGColor;
         float segmentAngle = maxAngle*value*self.animationCompletionPercent;
         CGPoint limit = CGPointMake(center.x + diagonalLineLength * cosf(startAngle+(segmentAngle*0.5f)),
@@ -198,7 +203,7 @@ float FLOAT_M_PI = 3.141592653f;
     CGColorRef innerPieColor = self.backgroundColor;
 
     //Draw separators
-    if (angles.count > 0){
+    if (angles.count > 1){
         for (NSNumber *angle in angles){
             CGContextSetLineWidth(ctx, 2.f);
             CGContextSetStrokeColorWithColor(ctx, innerPieColor);

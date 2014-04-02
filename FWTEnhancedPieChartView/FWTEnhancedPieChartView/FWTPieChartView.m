@@ -50,7 +50,7 @@ CGFloat FLOAT_M_PI_ = 3.141592653f;
     self = [super initWithFrame:frame];
     
     if (self != nil){
-        self.backgroundColor = [UIColor clearColor];
+        self.backgroundColor = [UIColor whiteColor];
     }
     return self;
 }
@@ -103,6 +103,7 @@ CGFloat FLOAT_M_PI_ = 3.141592653f;
 - (void)reloadAnimated:(BOOL)animated
 {
     FWTPieChartLayer *pieLayer = self.containerLayer.sublayers.firstObject;
+    pieLayer.backgroundColor = self.backgroundColor.CGColor;
     
     [CATransaction begin];
     [CATransaction setDisableActions:YES];

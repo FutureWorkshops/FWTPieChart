@@ -31,7 +31,6 @@ CGFloat FLOAT_M_PI = 3.141592653f;
     if (self != nil){
         
         self.needsDisplayOnBoundsChange = YES;
-        
         self->_animationCompletionPercent = 0.f;
         
         [CATransaction commit];
@@ -47,6 +46,7 @@ CGFloat FLOAT_M_PI = 3.141592653f;
         self.needsDisplayOnBoundsChange = YES;
         
         FWTPieChartLayer *source = (FWTPieChartLayer *)layer;
+        self.backgroundColor = source.backgroundColor;
         self->_startAngle = source.startAngle;
         self->_colors = source.colors;
         self->_values = source.values;
@@ -197,13 +197,13 @@ CGFloat FLOAT_M_PI = 3.141592653f;
         startAngle = endAngle;
     }
     
-    CGColorRef innerPieColor = [[UIColor whiteColor] CGColor];
+    CGColorRef innerPieColor = self.backgroundColor;
 
     //Draw separators
     if (angles.count > 0){
         for (NSNumber *angle in angles){
             CGContextSetLineWidth(ctx, 2.f);
-            CGContextSetStrokeColorWithColor(ctx, [UIColor whiteColor].CGColor);
+            CGContextSetStrokeColorWithColor(ctx, innerPieColor);
             CGContextBeginPath(ctx);
             CGContextMoveToPoint(ctx, center.x, center.y);
             CGPoint separatorLimit = CGPointMake(center.x + outerRadius * cosf(angle.floatValue),

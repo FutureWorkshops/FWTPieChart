@@ -15,7 +15,7 @@
 @property (nonatomic, strong) NSArray *innerTexts;
 @property (nonatomic, strong) NSArray *outterTexts;
 
-@property (nonatomic, assign) CGFloat startAngle;
-@property (nonatomic, assign) CGFloat animationCompletionPercent;
+@property (nonatomic, assign) float startAngle;
+@property (nonatomic, assign) float animationCompletionPercent;
 
 @end

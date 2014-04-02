@@ -18,7 +18,6 @@
 		B7402BCD16C26CE70014570E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7402BCC16C26CE70014570E /* CoreGraphics.framework */; };
 		B7402BD316C26CE70014570E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B7402BD116C26CE70014570E /* InfoPlist.strings */; };
 		B7402BD516C26CE70014570E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B7402BD416C26CE70014570E /* main.m */; };
-		B7402BE716C26CE70014570E /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7402BE616C26CE70014570E /* SenTestingKit.framework */; };
 		B7402BE816C26CE70014570E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7402BC816C26CE70014570E /* UIKit.framework */; };
 		B7402BE916C26CE70014570E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7402BCA16C26CE70014570E /* Foundation.framework */; };
 		B7402BF116C26CE70014570E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B7402BEF16C26CE70014570E /* InfoPlist.strings */; };
@@ -26,8 +25,6 @@
 		B7402C1416C270FC0014570E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B7402C1116C270FC0014570E /* Default-568h@2x.png */; };
 		B7402C1516C270FC0014570E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B7402C1216C270FC0014570E /* Default.png */; };
 		B7402C1616C270FC0014570E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B7402C1316C270FC0014570E /* Default@2x.png */; };
-		B7402C1816C275940014570E /* fw-shared.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B7402C1716C275930014570E /* fw-shared.xcconfig */; };
-		B7402C1916C275940014570E /* fw-shared.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B7402C1716C275930014570E /* fw-shared.xcconfig */; };
 		B7402C3016C2DD800014570E /* FWTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B7402C2F16C2DD800014570E /* FWTAppDelegate.m */; };
 /* End PBXBuildFile section */
 
@@ -59,8 +56,7 @@
 		B7402BD216C26CE70014570E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B7402BD416C26CE70014570E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B7402BD616C26CE70014570E /* FWTEnhancedPieChartView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FWTEnhancedPieChartView-Prefix.pch"; sourceTree = "<group>"; };
-		B7402BE516C26CE70014570E /* FWTEnhancedPieChartViewTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FWTEnhancedPieChartViewTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B7402BE616C26CE70014570E /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		B7402BE516C26CE70014570E /* FWTEnhancedPieChartViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FWTEnhancedPieChartViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7402BEE16C26CE70014570E /* FWTEnhancedPieChartViewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FWTEnhancedPieChartViewTests-Info.plist"; sourceTree = "<group>"; };
 		B7402BF016C26CE70014570E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B7402BFD16C26ED80014570E /* FWTEnhancedPieChartViewTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWTEnhancedPieChartViewTests.h; sourceTree = "<group>"; };
@@ -89,7 +85,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7402BE716C26CE70014570E /* SenTestingKit.framework in Frameworks */,
 				B7402BE816C26CE70014570E /* UIKit.framework in Frameworks */,
 				B7402BE916C26CE70014570E /* Foundation.framework in Frameworks */,
 			);
@@ -124,7 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				B7402BC416C26CE70014570E /* FWTEnhancedPieChartView.app */,
-				B7402BE516C26CE70014570E /* FWTEnhancedPieChartViewTests.octest */,
+				B7402BE516C26CE70014570E /* FWTEnhancedPieChartViewTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -136,7 +131,6 @@
 				B7402BC816C26CE70014570E /* UIKit.framework */,
 				B7402BCA16C26CE70014570E /* Foundation.framework */,
 				B7402BCC16C26CE70014570E /* CoreGraphics.framework */,
-				B7402BE616C26CE70014570E /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -234,8 +228,8 @@
 			);
 			name = FWTEnhancedPieChartViewTests;
 			productName = FWTEnhancedPieChartViewTests;
-			productReference = B7402BE516C26CE70014570E /* FWTEnhancedPieChartViewTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productReference = B7402BE516C26CE70014570E /* FWTEnhancedPieChartViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -244,7 +238,8 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = FWT;
-				LastUpgradeCheck = 0450;
+				LastTestingUpgradeCheck = 0510;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "";
 				TargetAttributes = {
 					B7402BC316C26CE70014570E = {
@@ -281,7 +276,6 @@
 				B7402C1516C270FC0014570E /* Default.png in Resources */,
 				07C0788318EA22EC007ED00D /* FWTiPhoneStoryboard.storyboard in Resources */,
 				B7402C1616C270FC0014570E /* Default@2x.png in Resources */,
-				B7402C1816C275940014570E /* fw-shared.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,7 +284,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7402BF116C26CE70014570E /* InfoPlist.strings in Resources */,
-				B7402C1916C275940014570E /* fw-shared.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,15 +421,15 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FWTEnhancedPieChartView.app/FWTEnhancedPieChartView";
 				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\\\"$(SDKROOT)/Developer/Library/Frameworks\\\"",
+					"\\\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\\\"",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FWTEnhancedPieChartView/Supporting Files/FWTEnhancedPieChartView-Prefix.pch";
 				INFOPLIST_FILE = "FWTEnhancedPieChartViewTests/Supporting Files/FWTEnhancedPieChartViewTests-Info.plist";
 				PRODUCT_NAME = FWTEnhancedPieChartViewTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Testing;
 		};
@@ -464,6 +457,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -531,15 +525,15 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FWTEnhancedPieChartView.app/FWTEnhancedPieChartView";
 				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\\\"$(SDKROOT)/Developer/Library/Frameworks\\\"",
+					"\\\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\\\"",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FWTEnhancedPieChartView/Supporting Files/FWTEnhancedPieChartView-Prefix.pch";
 				INFOPLIST_FILE = "FWTEnhancedPieChartViewTests/Supporting Files/FWTEnhancedPieChartViewTests-Info.plist";
 				PRODUCT_NAME = FWTEnhancedPieChartViewTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -548,15 +542,15 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FWTEnhancedPieChartView.app/FWTEnhancedPieChartView";
 				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\\\"$(SDKROOT)/Developer/Library/Frameworks\\\"",
+					"\\\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\\\"",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FWTEnhancedPieChartView/Supporting Files/FWTEnhancedPieChartView-Prefix.pch";
 				INFOPLIST_FILE = "FWTEnhancedPieChartViewTests/Supporting Files/FWTEnhancedPieChartViewTests-Info.plist";
 				PRODUCT_NAME = FWTEnhancedPieChartViewTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};

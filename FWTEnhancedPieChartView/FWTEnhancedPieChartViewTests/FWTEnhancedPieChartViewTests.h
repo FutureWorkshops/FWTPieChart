@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Future Workshops. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface FWTEnhancedPieChartViewTests : SenTestCase
+@interface FWTEnhancedPieChartViewTests : XCTestCase
 
 @end

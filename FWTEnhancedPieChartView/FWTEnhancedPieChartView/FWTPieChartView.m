@@ -34,7 +34,7 @@
 
 
 //FWTPieChartView
-CGFloat FLOAT_M_PI_ = 3.141592653f;
+float FLOAT_M_PI_ = 3.141592653f;
 
 @interface FWTPieChartView ()
 
@@ -175,7 +175,7 @@ CGFloat FLOAT_M_PI_ = 3.141592653f;
         self->_containerLayer.frame = self.bounds;
         
         FWTPieChartLayer *portionLayer = [[FWTPieChartLayer alloc] init];
-        portionLayer.startAngle = -FLOAT_M_PI_ / 2;
+        portionLayer.startAngle = -FLOAT_M_PI_ / 2.f;
         portionLayer.values = [self _values];
         portionLayer.colors = [self _colors];
         portionLayer.innerTexts = [self _innerTexts];

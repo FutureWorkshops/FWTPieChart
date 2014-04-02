@@ -79,12 +79,12 @@ CGFloat FLOAT_M_PI = 3.141592653f;
     CGFloat startAngle = self.startAngle;
     CGFloat maxAngle = (FLOAT_M_PI*2);
     
-    CGFloat outerRadius = CGRectGetMidY(rect)-50.f;
-    CGFloat innerRadius = (CGRectGetMidY(rect)-50.f) * 0.5f;
+    CGFloat outerRadius = CGRectGetMidY(rect)*0.65f;
+    CGFloat innerRadius = outerRadius * 0.5f;
     CGFloat spaceAvailable = outerRadius - innerRadius;
     CGFloat lettersCenterRadius = innerRadius + ((outerRadius-innerRadius)*0.5f);
     
-    CGFloat diagonalLineLength = outerRadius + (CGRectGetMidY(rect)*0.15f);
+    CGFloat diagonalLineLength = outerRadius*1.25;
     CGFloat horizontalLineLength = (spaceAvailable*0.26f);
     
     for (int i = 0; i < self.values.count; i++){

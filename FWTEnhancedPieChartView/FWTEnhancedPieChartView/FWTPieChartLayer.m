@@ -95,7 +95,7 @@ CGFloat FLOAT_M_PI = 3.141592653f;
                                     center.y + diagonalLineLength * sinf(startAngle+(segmentAngle*0.5f)));
         
         //Draw line
-        if (self.animationCompletionPercent > 0){
+        if (self.animationCompletionPercent > 0 && value >= 0.07f){
             CGContextSetLineWidth(ctx, 2.f);
             CGContextSetStrokeColorWithColor(ctx, segmentColor);
             CGContextBeginPath(ctx);
@@ -122,7 +122,7 @@ CGFloat FLOAT_M_PI = 3.141592653f;
         CGContextFillPath(ctx);
         
         //Draw inner letter
-        if (((NSNumber*)self.values[i]).floatValue >= 0.06f){
+        if (value >= 0.07f){
             CGSize textSize = [self.innerTexts[i] sizeWithFont:[self _innerLetterFontWithSpaceAvailable:spaceAvailable]];
             
             CGContextSetFillColorWithColor(ctx, [UIColor whiteColor].CGColor);
@@ -137,60 +137,61 @@ CGFloat FLOAT_M_PI = 3.141592653f;
                               lineBreakMode:NSLineBreakByClipping];
             
             UIGraphicsPopContext();
-        }
         
-        //Draw outter text
-        if (self.animationCompletionPercent > 0.f){
-            CGSize textSize = [self.outterTexts[i] sizeWithFont:[self _outterLetterFontWithSpaceAvailable:spaceAvailable]];
-            CGContextSetFillColorWithColor(ctx, segmentColor);
-            
-            CGPoint textPoint;
-            
-            if (limit.x > center.x){
-                textPoint = CGPointMake(limit.x+horizontalLineLength+5.f, limit.y-textSize.height+8.f);
-            }
-            else{
-                textPoint = CGPointMake(limit.x-horizontalLineLength-textSize.width-5.f, limit.y-textSize.height+8.f);
-            }
-            
-            UIGraphicsPushContext(ctx);
-            
-            [self.outterTexts[i] drawAtPoint:textPoint
-                                   forWidth:textSize.width
-                                   withFont:[self _outterLetterFontWithSpaceAvailable:spaceAvailable]
-                              lineBreakMode:NSLineBreakByClipping];
-            
-            UIGraphicsPopContext();
-        }
         
-        //Draw percentage text
-        if (self.animationCompletionPercent > 0.f){
-            NSString *percentText = [NSString stringWithFormat:@"%.0f%%",value*100*self.animationCompletionPercent];
-            CGSize textSize = [percentText sizeWithFont:[self _percentageFontWithSpaceAvailable:spaceAvailable]];
-            CGContextSetFillColorWithColor(ctx, [UIColor lightGrayColor].CGColor);
-            
-            CGPoint textPoint;
-            CGFloat verticalOffset = 5.f;
-            
-            if ([self.outterTexts[i] isEqualToString:@""]){
-                verticalOffset = -(textSize.height*0.5f);
+            //Draw outter text
+            if (self.animationCompletionPercent > 0.f){
+                CGSize textSize = [self.outterTexts[i] sizeWithFont:[self _outterLetterFontWithSpaceAvailable:spaceAvailable]];
+                CGContextSetFillColorWithColor(ctx, segmentColor);
+                
+                CGPoint textPoint;
+                
+                if (limit.x > center.x){
+                    textPoint = CGPointMake(limit.x+horizontalLineLength+5.f, limit.y-textSize.height+8.f);
+                }
+                else{
+                    textPoint = CGPointMake(limit.x-horizontalLineLength-textSize.width-5.f, limit.y-textSize.height+8.f);
+                }
+                
+                UIGraphicsPushContext(ctx);
+                
+                [self.outterTexts[i] drawAtPoint:textPoint
+                                       forWidth:textSize.width
+                                       withFont:[self _outterLetterFontWithSpaceAvailable:spaceAvailable]
+                                  lineBreakMode:NSLineBreakByClipping];
+                
+                UIGraphicsPopContext();
             }
             
-            if (limit.x > center.x){
-                textPoint = CGPointMake(limit.x+horizontalLineLength+5.f, limit.y+verticalOffset);
+            //Draw percentage text
+            if (self.animationCompletionPercent > 0.f){
+                NSString *percentText = [NSString stringWithFormat:@"%.0f%%",value*100*self.animationCompletionPercent];
+                CGSize textSize = [percentText sizeWithFont:[self _percentageFontWithSpaceAvailable:spaceAvailable]];
+                CGContextSetFillColorWithColor(ctx, [UIColor lightGrayColor].CGColor);
+                
+                CGPoint textPoint;
+                CGFloat verticalOffset = 5.f;
+                
+                if ([self.outterTexts[i] isEqualToString:@""]){
+                    verticalOffset = -(textSize.height*0.5f);
+                }
+                
+                if (limit.x > center.x){
+                    textPoint = CGPointMake(limit.x+horizontalLineLength+5.f, limit.y+verticalOffset);
+                }
+                else{
+                    textPoint = CGPointMake(limit.x-horizontalLineLength-textSize.width-5.f, limit.y+verticalOffset);
+                }
+                
+                UIGraphicsPushContext(ctx);
+                
+                [percentText drawAtPoint:textPoint
+                         forWidth:textSize.width
+                         withFont:[self _percentageFontWithSpaceAvailable:spaceAvailable]
+                    lineBreakMode:NSLineBreakByClipping];
+                
+                UIGraphicsPopContext();
             }
-            else{
-                textPoint = CGPointMake(limit.x-horizontalLineLength-textSize.width-5.f, limit.y+verticalOffset);
-            }
-            
-            UIGraphicsPushContext(ctx);
-            
-            [percentText drawAtPoint:textPoint
-                     forWidth:textSize.width
-                     withFont:[self _percentageFontWithSpaceAvailable:spaceAvailable]
-                lineBreakMode:NSLineBreakByClipping];
-            
-            UIGraphicsPopContext();
         }
         
         [angles addObject:@(startAngle)];

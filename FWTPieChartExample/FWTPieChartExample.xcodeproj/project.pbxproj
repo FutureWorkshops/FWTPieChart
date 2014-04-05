@@ -20,6 +20,7 @@
 		07DCA07B18F023CD0079DD4F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07DCA07918F023CD0079DD4F /* InfoPlist.strings */; };
 		07DCA07D18F023CD0079DD4F /* FWTPieChartExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DCA07C18F023CD0079DD4F /* FWTPieChartExampleTests.m */; };
 		07DCA08718F024300079DD4F /* FWTiPhoneStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07DCA08618F024300079DD4F /* FWTiPhoneStoryboard.storyboard */; };
+		07DCA08B18F024B80079DD4F /* FWTExamplesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DCA08A18F024B80079DD4F /* FWTExamplesViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,8 @@
 		07DCA07A18F023CD0079DD4F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		07DCA07C18F023CD0079DD4F /* FWTPieChartExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWTPieChartExampleTests.m; sourceTree = "<group>"; };
 		07DCA08618F024300079DD4F /* FWTiPhoneStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = FWTiPhoneStoryboard.storyboard; path = UI/FWTiPhoneStoryboard.storyboard; sourceTree = "<group>"; };
+		07DCA08918F024B80079DD4F /* FWTExamplesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FWTExamplesViewController.h; path = UI/FWTExamplesViewController.h; sourceTree = "<group>"; };
+		07DCA08A18F024B80079DD4F /* FWTExamplesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FWTExamplesViewController.m; path = UI/FWTExamplesViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +154,8 @@
 			isa = PBXGroup;
 			children = (
 				07DCA08618F024300079DD4F /* FWTiPhoneStoryboard.storyboard */,
+				07DCA08918F024B80079DD4F /* FWTExamplesViewController.h */,
+				07DCA08A18F024B80079DD4F /* FWTExamplesViewController.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -252,6 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07DCA08B18F024B80079DD4F /* FWTExamplesViewController.m in Sources */,
 				07DCA06818F023CD0079DD4F /* FWTAppDelegate.m in Sources */,
 				07DCA06418F023CD0079DD4F /* main.m in Sources */,
 			);

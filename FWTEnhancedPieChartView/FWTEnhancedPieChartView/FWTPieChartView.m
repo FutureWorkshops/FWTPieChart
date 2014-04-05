@@ -19,13 +19,13 @@
 + (FWTPieChartSegmentData*)pieChartSegmentWithValue:(NSNumber*)value
                                               color:(UIColor*)color
                                           innerText:(NSString*)innerText
-                                       andOuterText:(NSString*)outterText
+                                       andOuterText:(NSString*)outerText
 {
     FWTPieChartSegmentData *segmentData = [[FWTPieChartSegmentData alloc] init];
     segmentData.value = value != nil ? value : @(0.f);
     segmentData.color = color != nil ? color : [UIColor whiteColor];
     segmentData.innerText = innerText != nil ? innerText : @"";
-    segmentData.outterText = outterText != nil ? outterText : @"";
+    segmentData.outerText = outerText != nil ? outerText : @"";
     
     return segmentData;
 }
@@ -50,7 +50,7 @@ float FLOAT_M_PI_ = 3.141592653f;
     self = [super initWithFrame:frame];
     
     if (self != nil){
-        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = [UIColor clearColor];
     }
     return self;
 }
@@ -73,9 +73,9 @@ float FLOAT_M_PI_ = 3.141592653f;
     self.segments = segmentsTemp;
 }
 
-- (FWTPieChartSegmentData*)addSegmentWithValue:(NSNumber*)value color:(UIColor*)color innerText:(NSString*)innerText andOutterText:(NSString*)outterText
+- (FWTPieChartSegmentData*)addSegmentWithValue:(NSNumber*)value color:(UIColor*)color innerText:(NSString*)innerText andouterText:(NSString*)outerText
 {
-    FWTPieChartSegmentData *segmentData = [FWTPieChartSegmentData pieChartSegmentWithValue:value color:color innerText:innerText andOuterText:outterText];
+    FWTPieChartSegmentData *segmentData = [FWTPieChartSegmentData pieChartSegmentWithValue:value color:color innerText:innerText andOuterText:outerText];
     [self addSegment:segmentData];
     
     return segmentData;
@@ -103,7 +103,6 @@ float FLOAT_M_PI_ = 3.141592653f;
 - (void)reloadAnimated:(BOOL)animated
 {
     FWTPieChartLayer *pieLayer = self.containerLayer.sublayers.firstObject;
-    pieLayer.backgroundColor = self.backgroundColor.CGColor;
     
     [CATransaction begin];
     [CATransaction setDisableActions:YES];
@@ -111,7 +110,11 @@ float FLOAT_M_PI_ = 3.141592653f;
     pieLayer.values = [self _values];
     pieLayer.colors = [self _colors];
     pieLayer.innerTexts = [self _innerTexts];
-    pieLayer.outterTexts = [self _outterTexts];
+    pieLayer.outerTexts = [self _outerTexts];
+    pieLayer.font = self.font;
+    pieLayer.shouldDrawSeparators = self.shouldDrawSeparators;
+    pieLayer.shouldDrawPercentages = self.shouldDrawPercentages;
+    pieLayer.innerCircleProportionalRadius = self.innerCircleProportionalRadius;
     
     [CATransaction commit];
     
@@ -158,11 +161,11 @@ float FLOAT_M_PI_ = 3.141592653f;
     return array;
 }
 
-- (NSArray*)_outterTexts
+- (NSArray*)_outerTexts
 {
     NSMutableArray *array = [NSMutableArray array];
     for (FWTPieChartSegmentData *data in self.segments){
-        [array addObject:data.outterText];
+        [array addObject:data.outerText];
     }
     return array;
 }
@@ -179,11 +182,17 @@ float FLOAT_M_PI_ = 3.141592653f;
         portionLayer.values = [self _values];
         portionLayer.colors = [self _colors];
         portionLayer.innerTexts = [self _innerTexts];
-        portionLayer.outterTexts = [self _outterTexts];
+        portionLayer.outerTexts = [self _outerTexts];
+        portionLayer.backgroundColor = [UIColor whiteColor].CGColor;
         portionLayer.contentsScale = [UIScreen mainScreen].scale;
         portionLayer.frame = self->_containerLayer.frame;
         
         [self->_containerLayer addSublayer:portionLayer];
+        
+        self.font = portionLayer.font;
+        self.shouldDrawSeparators = portionLayer.shouldDrawSeparators;
+        self.shouldDrawPercentages = portionLayer.shouldDrawPercentages;
+        self.innerCircleProportionalRadius = portionLayer.innerCircleProportionalRadius;
     }
     
     if (self->_containerLayer.superlayer == nil){

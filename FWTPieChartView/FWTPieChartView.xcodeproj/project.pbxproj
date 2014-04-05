@@ -16,6 +16,7 @@
 		07DCA0B018F02CB50079DD4F /* libFWTPieChartView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DCA09818F02CB50079DD4F /* libFWTPieChartView.a */; };
 		07DCA0B618F02CB50079DD4F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07DCA0B418F02CB50079DD4F /* InfoPlist.strings */; };
 		07DCA0B818F02CB50079DD4F /* FWTPieChartViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DCA0B718F02CB50079DD4F /* FWTPieChartViewTests.m */; };
+		07DCA0C318F02CED0079DD4F /* FWTPieChartLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DCA0C118F02CED0079DD4F /* FWTPieChartLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		07DCA0B318F02CB50079DD4F /* FWTPieChartViewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FWTPieChartViewTests-Info.plist"; sourceTree = "<group>"; };
 		07DCA0B518F02CB50079DD4F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		07DCA0B718F02CB50079DD4F /* FWTPieChartViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWTPieChartViewTests.m; sourceTree = "<group>"; };
+		07DCA0C118F02CED0079DD4F /* FWTPieChartLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWTPieChartLayer.m; sourceTree = "<group>"; };
+		07DCA0C218F02CED0079DD4F /* FWTPieChartLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWTPieChartLayer.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,8 @@
 		07DCA09D18F02CB50079DD4F /* FWTPieChartView */ = {
 			isa = PBXGroup;
 			children = (
+				07DCA0C218F02CED0079DD4F /* FWTPieChartLayer.h */,
+				07DCA0C118F02CED0079DD4F /* FWTPieChartLayer.m */,
 				07DCA0A018F02CB50079DD4F /* FWTPieChartView.h */,
 				07DCA0A218F02CB50079DD4F /* FWTPieChartView.m */,
 				07DCA09E18F02CB50079DD4F /* Supporting Files */,
@@ -225,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07DCA0A318F02CB50079DD4F /* FWTPieChartView.m in Sources */,
+				07DCA0C318F02CED0079DD4F /* FWTPieChartLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

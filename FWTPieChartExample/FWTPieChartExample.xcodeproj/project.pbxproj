@@ -1,0 +1,467 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		07DCA05818F023CD0079DD4F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DCA05718F023CD0079DD4F /* Foundation.framework */; };
+		07DCA05A18F023CD0079DD4F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DCA05918F023CD0079DD4F /* CoreGraphics.framework */; };
+		07DCA05C18F023CD0079DD4F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DCA05B18F023CD0079DD4F /* UIKit.framework */; };
+		07DCA06218F023CD0079DD4F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07DCA06018F023CD0079DD4F /* InfoPlist.strings */; };
+		07DCA06418F023CD0079DD4F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DCA06318F023CD0079DD4F /* main.m */; };
+		07DCA06818F023CD0079DD4F /* FWTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DCA06718F023CD0079DD4F /* FWTAppDelegate.m */; };
+		07DCA06A18F023CD0079DD4F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07DCA06918F023CD0079DD4F /* Images.xcassets */; };
+		07DCA07118F023CD0079DD4F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DCA07018F023CD0079DD4F /* XCTest.framework */; };
+		07DCA07218F023CD0079DD4F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DCA05718F023CD0079DD4F /* Foundation.framework */; };
+		07DCA07318F023CD0079DD4F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DCA05B18F023CD0079DD4F /* UIKit.framework */; };
+		07DCA07B18F023CD0079DD4F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07DCA07918F023CD0079DD4F /* InfoPlist.strings */; };
+		07DCA07D18F023CD0079DD4F /* FWTPieChartExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DCA07C18F023CD0079DD4F /* FWTPieChartExampleTests.m */; };
+		07DCA08718F024300079DD4F /* FWTiPhoneStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07DCA08618F024300079DD4F /* FWTiPhoneStoryboard.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		07DCA07418F023CD0079DD4F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 07DCA04C18F023CD0079DD4F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 07DCA05318F023CD0079DD4F;
+			remoteInfo = FWTPieChartExample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		07DCA05418F023CD0079DD4F /* FWTPieChartExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FWTPieChartExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		07DCA05718F023CD0079DD4F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		07DCA05918F023CD0079DD4F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		07DCA05B18F023CD0079DD4F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		07DCA05F18F023CD0079DD4F /* FWTPieChartExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FWTPieChartExample-Info.plist"; sourceTree = "<group>"; };
+		07DCA06118F023CD0079DD4F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		07DCA06318F023CD0079DD4F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		07DCA06518F023CD0079DD4F /* FWTPieChartExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FWTPieChartExample-Prefix.pch"; sourceTree = "<group>"; };
+		07DCA06618F023CD0079DD4F /* FWTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWTAppDelegate.h; sourceTree = "<group>"; };
+		07DCA06718F023CD0079DD4F /* FWTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWTAppDelegate.m; sourceTree = "<group>"; };
+		07DCA06918F023CD0079DD4F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		07DCA06F18F023CD0079DD4F /* FWTPieChartExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FWTPieChartExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		07DCA07018F023CD0079DD4F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		07DCA07818F023CD0079DD4F /* FWTPieChartExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FWTPieChartExampleTests-Info.plist"; sourceTree = "<group>"; };
+		07DCA07A18F023CD0079DD4F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		07DCA07C18F023CD0079DD4F /* FWTPieChartExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWTPieChartExampleTests.m; sourceTree = "<group>"; };
+		07DCA08618F024300079DD4F /* FWTiPhoneStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = FWTiPhoneStoryboard.storyboard; path = UI/FWTiPhoneStoryboard.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		07DCA05118F023CD0079DD4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07DCA05A18F023CD0079DD4F /* CoreGraphics.framework in Frameworks */,
+				07DCA05C18F023CD0079DD4F /* UIKit.framework in Frameworks */,
+				07DCA05818F023CD0079DD4F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07DCA06C18F023CD0079DD4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07DCA07118F023CD0079DD4F /* XCTest.framework in Frameworks */,
+				07DCA07318F023CD0079DD4F /* UIKit.framework in Frameworks */,
+				07DCA07218F023CD0079DD4F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		07DCA04B18F023CD0079DD4F = {
+			isa = PBXGroup;
+			children = (
+				07DCA05D18F023CD0079DD4F /* FWTPieChartExample */,
+				07DCA07618F023CD0079DD4F /* FWTPieChartExampleTests */,
+				07DCA05618F023CD0079DD4F /* Frameworks */,
+				07DCA05518F023CD0079DD4F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		07DCA05518F023CD0079DD4F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				07DCA05418F023CD0079DD4F /* FWTPieChartExample.app */,
+				07DCA06F18F023CD0079DD4F /* FWTPieChartExampleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		07DCA05618F023CD0079DD4F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				07DCA05718F023CD0079DD4F /* Foundation.framework */,
+				07DCA05918F023CD0079DD4F /* CoreGraphics.framework */,
+				07DCA05B18F023CD0079DD4F /* UIKit.framework */,
+				07DCA07018F023CD0079DD4F /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		07DCA05D18F023CD0079DD4F /* FWTPieChartExample */ = {
+			isa = PBXGroup;
+			children = (
+				07DCA08818F024350079DD4F /* UI */,
+				07DCA06618F023CD0079DD4F /* FWTAppDelegate.h */,
+				07DCA06718F023CD0079DD4F /* FWTAppDelegate.m */,
+				07DCA06918F023CD0079DD4F /* Images.xcassets */,
+				07DCA05E18F023CD0079DD4F /* Supporting Files */,
+			);
+			path = FWTPieChartExample;
+			sourceTree = "<group>";
+		};
+		07DCA05E18F023CD0079DD4F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				07DCA05F18F023CD0079DD4F /* FWTPieChartExample-Info.plist */,
+				07DCA06018F023CD0079DD4F /* InfoPlist.strings */,
+				07DCA06318F023CD0079DD4F /* main.m */,
+				07DCA06518F023CD0079DD4F /* FWTPieChartExample-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		07DCA07618F023CD0079DD4F /* FWTPieChartExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				07DCA07C18F023CD0079DD4F /* FWTPieChartExampleTests.m */,
+				07DCA07718F023CD0079DD4F /* Supporting Files */,
+			);
+			path = FWTPieChartExampleTests;
+			sourceTree = "<group>";
+		};
+		07DCA07718F023CD0079DD4F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				07DCA07818F023CD0079DD4F /* FWTPieChartExampleTests-Info.plist */,
+				07DCA07918F023CD0079DD4F /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		07DCA08818F024350079DD4F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				07DCA08618F024300079DD4F /* FWTiPhoneStoryboard.storyboard */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		07DCA05318F023CD0079DD4F /* FWTPieChartExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07DCA08018F023CD0079DD4F /* Build configuration list for PBXNativeTarget "FWTPieChartExample" */;
+			buildPhases = (
+				07DCA05018F023CD0079DD4F /* Sources */,
+				07DCA05118F023CD0079DD4F /* Frameworks */,
+				07DCA05218F023CD0079DD4F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FWTPieChartExample;
+			productName = FWTPieChartExample;
+			productReference = 07DCA05418F023CD0079DD4F /* FWTPieChartExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		07DCA06E18F023CD0079DD4F /* FWTPieChartExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07DCA08318F023CD0079DD4F /* Build configuration list for PBXNativeTarget "FWTPieChartExampleTests" */;
+			buildPhases = (
+				07DCA06B18F023CD0079DD4F /* Sources */,
+				07DCA06C18F023CD0079DD4F /* Frameworks */,
+				07DCA06D18F023CD0079DD4F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				07DCA07518F023CD0079DD4F /* PBXTargetDependency */,
+			);
+			name = FWTPieChartExampleTests;
+			productName = FWTPieChartExampleTests;
+			productReference = 07DCA06F18F023CD0079DD4F /* FWTPieChartExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		07DCA04C18F023CD0079DD4F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = FWT;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Carlos Vidal";
+				TargetAttributes = {
+					07DCA06E18F023CD0079DD4F = {
+						TestTargetID = 07DCA05318F023CD0079DD4F;
+					};
+				};
+			};
+			buildConfigurationList = 07DCA04F18F023CD0079DD4F /* Build configuration list for PBXProject "FWTPieChartExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 07DCA04B18F023CD0079DD4F;
+			productRefGroup = 07DCA05518F023CD0079DD4F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				07DCA05318F023CD0079DD4F /* FWTPieChartExample */,
+				07DCA06E18F023CD0079DD4F /* FWTPieChartExampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		07DCA05218F023CD0079DD4F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07DCA06218F023CD0079DD4F /* InfoPlist.strings in Resources */,
+				07DCA08718F024300079DD4F /* FWTiPhoneStoryboard.storyboard in Resources */,
+				07DCA06A18F023CD0079DD4F /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07DCA06D18F023CD0079DD4F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07DCA07B18F023CD0079DD4F /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		07DCA05018F023CD0079DD4F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07DCA06818F023CD0079DD4F /* FWTAppDelegate.m in Sources */,
+				07DCA06418F023CD0079DD4F /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07DCA06B18F023CD0079DD4F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07DCA07D18F023CD0079DD4F /* FWTPieChartExampleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		07DCA07518F023CD0079DD4F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 07DCA05318F023CD0079DD4F /* FWTPieChartExample */;
+			targetProxy = 07DCA07418F023CD0079DD4F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		07DCA06018F023CD0079DD4F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				07DCA06118F023CD0079DD4F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		07DCA07918F023CD0079DD4F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				07DCA07A18F023CD0079DD4F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		07DCA07E18F023CD0079DD4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		07DCA07F18F023CD0079DD4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		07DCA08118F023CD0079DD4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FWTPieChartExample/FWTPieChartExample-Prefix.pch";
+				INFOPLIST_FILE = "FWTPieChartExample/FWTPieChartExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		07DCA08218F023CD0079DD4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FWTPieChartExample/FWTPieChartExample-Prefix.pch";
+				INFOPLIST_FILE = "FWTPieChartExample/FWTPieChartExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		07DCA08418F023CD0079DD4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FWTPieChartExample.app/FWTPieChartExample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FWTPieChartExample/FWTPieChartExample-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "FWTPieChartExampleTests/FWTPieChartExampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		07DCA08518F023CD0079DD4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FWTPieChartExample.app/FWTPieChartExample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FWTPieChartExample/FWTPieChartExample-Prefix.pch";
+				INFOPLIST_FILE = "FWTPieChartExampleTests/FWTPieChartExampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		07DCA04F18F023CD0079DD4F /* Build configuration list for PBXProject "FWTPieChartExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07DCA07E18F023CD0079DD4F /* Debug */,
+				07DCA07F18F023CD0079DD4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		07DCA08018F023CD0079DD4F /* Build configuration list for PBXNativeTarget "FWTPieChartExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07DCA08118F023CD0079DD4F /* Debug */,
+				07DCA08218F023CD0079DD4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		07DCA08318F023CD0079DD4F /* Build configuration list for PBXNativeTarget "FWTPieChartExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07DCA08418F023CD0079DD4F /* Debug */,
+				07DCA08518F023CD0079DD4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 07DCA04C18F023CD0079DD4F /* Project object */;
+}

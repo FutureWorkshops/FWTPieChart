@@ -1,18 +1,18 @@
 //
-//  FWTEnhancedPieChartTestTests.m
-//  FWTEnhancedPieChartTestTests
+//  FWTPieChartExampleTests.m
+//  FWTPieChartExampleTests
 //
-//  Created by Carlos Vidal on 27/03/2014.
+//  Created by Carlos Vidal on 05/04/2014.
 //  Copyright (c) 2014 Carlos Vidal. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface FWTEnhancedPieChartTestTests : XCTestCase
+@interface FWTPieChartExampleTests : XCTestCase
 
 @end
 
-@implementation FWTEnhancedPieChartTestTests
+@implementation FWTPieChartExampleTests
 
 - (void)setUp
 {

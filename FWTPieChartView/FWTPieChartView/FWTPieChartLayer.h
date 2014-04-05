@@ -6,8 +6,6 @@
 //
 //
 
-#import <QuartzCore/QuartzCore.h>
-
 @interface FWTPieChartLayer : CALayer
 
 @property (nonatomic, strong) NSArray *values;

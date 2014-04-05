@@ -6,8 +6,6 @@
 //  Copyright (c) 2014 Carlos Vidal. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
 //FWTPieChartSegmentData
 @interface FWTPieChartSegmentData : NSObject
 

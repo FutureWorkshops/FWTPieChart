@@ -410,6 +410,8 @@
 				INFOPLIST_FILE = "FWTEnhancedPieChartView/Supporting Files/FWTEnhancedPieChartView-Info.plist";
 				INFOPLIST_PREFIX_HEADER = "FWTEnhancedPieChartView/Supporting Files/info.plist.h";
 				INFOPLIST_PREPROCESS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = FWTEnhancedPieChartView;
 				PROVISIONING_PROFILE = "F600AC74-CE4D-4551-A7B4-51DD55B71E4F";
 				WRAPPER_EXTENSION = app;
@@ -498,6 +500,8 @@
 				INFOPLIST_FILE = "FWTEnhancedPieChartView/Supporting Files/FWTEnhancedPieChartView-Info.plist";
 				INFOPLIST_PREFIX_HEADER = "FWTEnhancedPieChartView/Supporting Files/info.plist.h";
 				INFOPLIST_PREPROCESS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = FWTEnhancedPieChartView;
 				PROVISIONING_PROFILE = "F600AC74-CE4D-4551-A7B4-51DD55B71E4F";
 				WRAPPER_EXTENSION = app;
@@ -514,6 +518,8 @@
 				INFOPLIST_FILE = "FWTEnhancedPieChartView/Supporting Files/FWTEnhancedPieChartView-Info.plist";
 				INFOPLIST_PREFIX_HEADER = "FWTEnhancedPieChartView/Supporting Files/info.plist.h";
 				INFOPLIST_PREPROCESS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = FWTEnhancedPieChartView;
 				PROVISIONING_PROFILE = "F600AC74-CE4D-4551-A7B4-51DD55B71E4F";
 				WRAPPER_EXTENSION = app;

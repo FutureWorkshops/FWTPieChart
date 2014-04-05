@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B7402BE416C26CE70014570E"
-               BuildableName = "FWTEnhancedPieChartViewTests.octest"
+               BuildableName = "FWTEnhancedPieChartViewTests.xctest"
                BlueprintName = "FWTEnhancedPieChartViewTests"
                ReferencedContainer = "container:FWTEnhancedPieChartView.xcodeproj">
             </BuildableReference>

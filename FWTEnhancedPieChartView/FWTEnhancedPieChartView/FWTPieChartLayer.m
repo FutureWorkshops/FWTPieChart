@@ -94,7 +94,8 @@ float FLOAT_M_PI = 3.141592653f;
             continue;
         }
         
-        CGColorRef segmentColor = ((UIColor*)self.colors[i]).CGColor;
+        UIColor *segmentColor = self.colors[i];
+        CGColorRef segmentColorRef = segmentColor.CGColor;
         float segmentAngle = maxAngle*value*self.animationCompletionPercent;
         CGPoint limit = CGPointMake(center.x + diagonalLineLength * cosf(startAngle+(segmentAngle*0.5f)),
                                     center.y + diagonalLineLength * sinf(startAngle+(segmentAngle*0.5f)));
@@ -102,7 +103,7 @@ float FLOAT_M_PI = 3.141592653f;
         //Draw line
         if (self.animationCompletionPercent > 0 && value >= 0.07f){
             CGContextSetLineWidth(ctx, 2.f);
-            CGContextSetStrokeColorWithColor(ctx, segmentColor);
+            CGContextSetStrokeColorWithColor(ctx, segmentColorRef);
             CGContextBeginPath(ctx);
             CGContextMoveToPoint(ctx, center.x, center.y);
             CGContextAddLineToPoint(ctx, limit.x, limit.y);
@@ -120,7 +121,7 @@ float FLOAT_M_PI = 3.141592653f;
         // Draw segment
         float endAngle = startAngle + segmentAngle;
         
-        CGContextSetFillColorWithColor(ctx, segmentColor);
+        CGContextSetFillColorWithColor(ctx, segmentColorRef);
         CGContextMoveToPoint(ctx, center.x, center.y);
         CGContextAddArc(ctx, center.x, center.y, outerRadius, startAngle, endAngle, 0);
         CGContextClosePath(ctx);
@@ -128,26 +129,26 @@ float FLOAT_M_PI = 3.141592653f;
         
         //Draw inner letter
         if (value >= 0.07f){
-            CGSize textSize = [self.innerTexts[i] sizeWithFont:[self _innerLetterFontWithSpaceAvailable:spaceAvailable]];
+            UIColor *innerTextColor = [UIColor whiteColor];
+            CGSize textSize = [self.innerTexts[i] sizeWithAttributes:[self _innerLetterAttributesWithSpaceAvailable:spaceAvailable andTextColor:innerTextColor]];
             
-            CGContextSetFillColorWithColor(ctx, [UIColor whiteColor].CGColor);
+            CGContextSetFillColorWithColor(ctx, innerTextColor.CGColor);
             CGPoint letterCenter = CGPointMake(center.x - (textSize.width*0.5f) + lettersCenterRadius * cosf(startAngle+(segmentAngle*0.5f)),
                                                center.y - (textSize.height*0.5f) + lettersCenterRadius * sinf(startAngle+(segmentAngle*0.5f)));
             
             UIGraphicsPushContext(ctx);
             
             [self.innerTexts[i] drawAtPoint:letterCenter
-                                   forWidth:textSize.width
-                                   withFont:[self _innerLetterFontWithSpaceAvailable:spaceAvailable]
-                              lineBreakMode:NSLineBreakByClipping];
+                             withAttributes:[self _innerLetterAttributesWithSpaceAvailable:spaceAvailable andTextColor:innerTextColor]];
             
             UIGraphicsPopContext();
         
         
             //Draw outter text
             if (self.animationCompletionPercent > 0.f){
-                CGSize outterTextSize = [self.outterTexts[i] sizeWithFont:[self _outterLetterFontWithSpaceAvailable:spaceAvailable]];
-                CGContextSetFillColorWithColor(ctx, segmentColor);
+                UIColor *outterTextColor = segmentColor;
+                CGSize outterTextSize = [self.outterTexts[i] sizeWithAttributes:[self _outterLetterAttributesWithSpaceAvailable:spaceAvailable andTextColor:outterTextColor]];
+                CGContextSetFillColorWithColor(ctx, outterTextColor.CGColor);
                 
                 CGPoint textPoint;
                 
@@ -161,16 +162,15 @@ float FLOAT_M_PI = 3.141592653f;
                 UIGraphicsPushContext(ctx);
                 
                 [self.outterTexts[i] drawAtPoint:textPoint
-                                       forWidth:outterTextSize.width
-                                       withFont:[self _outterLetterFontWithSpaceAvailable:spaceAvailable]
-                                  lineBreakMode:NSLineBreakByClipping];
+                                  withAttributes:[self _outterLetterAttributesWithSpaceAvailable:spaceAvailable andTextColor:outterTextColor]];
                 
                 UIGraphicsPopContext();
             
-            //Draw percentage text
+                //Draw percentage text
+                UIColor *percentColor = [UIColor lightGrayColor];
                 NSString *percentText = [NSString stringWithFormat:@"%.0f%%",value*100*self.animationCompletionPercent];
-                CGSize percentSize = [percentText sizeWithFont:[self _percentageFontWithSpaceAvailable:spaceAvailable]];
-                CGContextSetFillColorWithColor(ctx, [UIColor lightGrayColor].CGColor);
+                CGSize percentSize = [percentText sizeWithAttributes:[self _percentageAttributesWithSpaceAvailable:spaceAvailable andTextColor:percentColor]];
+                CGContextSetFillColorWithColor(ctx, percentColor.CGColor);
                 
                 float verticalOffset = 5.f;
                 
@@ -186,12 +186,10 @@ float FLOAT_M_PI = 3.141592653f;
                 }
                 
                 UIGraphicsPushContext(ctx);
-                
+
                 [percentText drawAtPoint:textPoint
-                         forWidth:percentSize.width
-                         withFont:[self _percentageFontWithSpaceAvailable:spaceAvailable]
-                    lineBreakMode:NSLineBreakByClipping];
-                
+                          withAttributes:[self _percentageAttributesWithSpaceAvailable:spaceAvailable andTextColor:percentColor]];
+
                 UIGraphicsPopContext();
             }
         }
@@ -248,18 +246,36 @@ float FLOAT_M_PI = 3.141592653f;
 	return [super actionForKey:event];
 }
 
-#pragma mark - Lazy loading
-- (UIFont*)_innerLetterFontWithSpaceAvailable:(float)spaceAvaliable
+#pragma mark - Private methods
+- (NSDictionary*)_innerLetterAttributesWithSpaceAvailable:(CGFloat)spaceAvaliable andTextColor:(UIColor*)color
+{
+    return @{NSFontAttributeName:[self _innerLetterFontWithSpaceAvailable:spaceAvaliable],
+             NSForegroundColorAttributeName:color};
+}
+
+- (UIFont*)_innerLetterFontWithSpaceAvailable:(CGFloat)spaceAvaliable
 {
     return [UIFont fontWithName:@"HelveticaNeue" size:spaceAvaliable*0.5f];
 }
 
-- (UIFont*)_outterLetterFontWithSpaceAvailable:(float)spaceAvaliable
+- (NSDictionary*)_outterLetterAttributesWithSpaceAvailable:(CGFloat)spaceAvaliable andTextColor:(UIColor*)color
+{
+    return @{NSFontAttributeName:[self _outterLetterFontWithSpaceAvailable:spaceAvaliable],
+             NSForegroundColorAttributeName:color};
+}
+
+- (UIFont*)_outterLetterFontWithSpaceAvailable:(CGFloat)spaceAvaliable
 {
     return [UIFont fontWithName:@"HelveticaNeue" size:spaceAvaliable*0.58f];
 }
 
-- (UIFont*)_percentageFontWithSpaceAvailable:(float)spaceAvaliable
+- (NSDictionary*)_percentageAttributesWithSpaceAvailable:(CGFloat)spaceAvaliable andTextColor:(UIColor*)color
+{
+    return @{NSFontAttributeName:[self _percentageFontWithSpaceAvailable:spaceAvaliable],
+             NSForegroundColorAttributeName:color};
+}
+
+- (UIFont*)_percentageFontWithSpaceAvailable:(CGFloat)spaceAvaliable
 {
     return [UIFont fontWithName:@"HelveticaNeue" size:spaceAvaliable*0.35f];
 }

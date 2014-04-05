@@ -19,6 +19,8 @@ NSString *const FWTExamplesToInfoSegueIdentifier    = @"FWTExamplesToInfoSegueId
 @property (nonatomic, strong) NSArray *segmentsWithInnerTexts;
 @property (nonatomic, strong) NSArray *segmentsWithOuterTexts;
 
+@property (nonatomic, strong) UIImageView *logoImageView;
+
 @end
 
 @implementation FWTExamplesViewController
@@ -158,7 +160,29 @@ NSString *const FWTExamplesToInfoSegueIdentifier    = @"FWTExamplesToInfoSegueId
     return cell;
 }
 
+#pragma mark - UIScrollViewDelegate methods
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    CGFloat factor = -(scrollView.contentOffset.y + 80.f)*0.01f;
+    self.logoImageView.alpha = factor;
+}
+
+
 #pragma mark - Lazy loading
+- (UIImageView*)logoImageView
+{
+    if (self->_logoImageView == nil){
+        self->_logoImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"fwt_logo"]];
+        self->_logoImageView.center = CGPointMake(self.tableView.center.x, -self->_logoImageView.image.size.height);
+    }
+    
+    if (self->_logoImageView.superview == nil){
+        [self.tableView addSubview:self->_logoImageView];
+    }
+    
+    return self->_logoImageView;
+}
+
 - (NSArray*)segments
 {
     if (self->_segments == nil){

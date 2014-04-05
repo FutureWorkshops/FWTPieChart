@@ -24,6 +24,7 @@
     
     self.animateButton.layer.borderWidth = 1.f;
     self.animateButton.layer.cornerRadius = 4.f;
+    self.animateButton.layer.borderColor = [UIColor colorWithRed:183.f/255.f green:16.f/255.f blue:21.f/255.f alpha:1.f].CGColor;
 }
 
 #pragma mark - Private methods

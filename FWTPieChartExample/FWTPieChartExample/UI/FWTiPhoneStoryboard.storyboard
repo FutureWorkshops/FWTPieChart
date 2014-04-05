@@ -66,10 +66,10 @@
             </objects>
             <point key="canvasLocation" x="836" y="90"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Base Navigation Controller-->
         <scene sceneID="GEO-FI-QIf">
             <objects>
-                <navigationController definesPresentationContext="YES" id="IfA-OD-rF0" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" id="IfA-OD-rF0" customClass="FWTBaseNavigationController" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hc8-vD-RG3">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -110,10 +110,10 @@
             </objects>
             <point key="canvasLocation" x="1383" y="-769"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Base Navigation Controller-->
         <scene sceneID="a3H-6v-5ys">
             <objects>
-                <navigationController definesPresentationContext="YES" id="G7C-Pk-8Bf" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" id="G7C-Pk-8Bf" customClass="FWTBaseNavigationController" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="sU2-WR-Fr8">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

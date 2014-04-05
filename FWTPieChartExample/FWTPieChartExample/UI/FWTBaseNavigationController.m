@@ -14,36 +14,26 @@
 
 @implementation FWTBaseNavigationController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self _setupApplicationAppearance];
 }
 
-- (void)didReceiveMemoryWarning
+- (UIStatusBarStyle)preferredStatusBarStyle
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    return UIStatusBarStyleLightContent;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+#pragma mark - Private methods
+- (void)_setupApplicationAppearance
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    [[UIButton appearance] setTintColor:[UIColor colorWithRed:183.f/255.f green:16.f/255.f blue:21.f/255.f alpha:1.f]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:183.f/255.f green:16.f/255.f blue:21.f/255.f alpha:1.f]];
+    [[UIBarButtonItem appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue-Light" size:16.f]} forState:UIControlStateNormal];
 }
-*/
 
 @end

@@ -96,7 +96,7 @@
 - (void)clearSegments;
 
 /**
- Re-draws a pie chart, performing an animation if needed.
+ Re-draws a pie chart, performing an animation if needed. Completion block is called at the end of the animation.
  */
 - (void)reloadAnimated:(BOOL)animated withCompletionBlock:(void(^)())completionBlock;
 

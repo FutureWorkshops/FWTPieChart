@@ -22,6 +22,4 @@
 @property (nonatomic, assign) BOOL shouldDrawPercentages;
 @property (nonatomic, assign) BOOL shouldDrawSeparators;
 
-
-
 @end

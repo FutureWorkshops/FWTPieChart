@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Examples View Controller - Root View Controller-->
+        <!--Examples View Controller - FWTPieChartView-->
         <scene sceneID="WyY-1e-v3e">
             <objects>
                 <tableViewController id="rjP-gR-WoR" customClass="FWTExamplesViewController" sceneMemberID="viewController">
@@ -56,7 +56,7 @@
                             <outlet property="delegate" destination="rjP-gR-WoR" id="psn-1O-k5P"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="39H-bP-eGU"/>
+                    <navigationItem key="navigationItem" title="FWTPieChartView" id="39H-bP-eGU"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jwj-rA-aF0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -121,10 +121,10 @@
 		07DCA09D18F02CB50079DD4F /* FWTPieChartView */ = {
 			isa = PBXGroup;
 			children = (
-				07DCA0C218F02CED0079DD4F /* FWTPieChartLayer.h */,
-				07DCA0C118F02CED0079DD4F /* FWTPieChartLayer.m */,
 				07DCA0A018F02CB50079DD4F /* FWTPieChartView.h */,
 				07DCA0A218F02CB50079DD4F /* FWTPieChartView.m */,
+				07DCA0C218F02CED0079DD4F /* FWTPieChartLayer.h */,
+				07DCA0C118F02CED0079DD4F /* FWTPieChartLayer.m */,
 				07DCA09E18F02CB50079DD4F /* Supporting Files */,
 			);
 			path = FWTPieChartView;

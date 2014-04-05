@@ -98,6 +98,6 @@
 /**
  Re-draws a pie chart, performing an animation if needed.
  */
-- (void)reloadAnimated:(BOOL)animated;
+- (void)reloadAnimated:(BOOL)animated withCompletionBlock:(void(^)())completionBlock;
 
 @end

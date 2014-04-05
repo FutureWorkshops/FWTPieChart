@@ -29,7 +29,9 @@
 #pragma mark - Private methods
 - (IBAction)_animatePieChart:(id)sender
 {
-    [self.pieChartView reloadAnimated:YES];
+    [self.pieChartView reloadAnimated:YES withCompletionBlock:^{
+        NSLog(@"Animation finished");
+    }];
 }
 
 @end

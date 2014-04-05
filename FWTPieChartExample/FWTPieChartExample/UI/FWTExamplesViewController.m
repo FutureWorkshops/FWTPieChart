@@ -143,7 +143,7 @@ NSString *const FWTPieChartCellReuseIdentifier = @"FWTPieChartCellReuseIdentifie
             break;
     }
     
-    [pieChartView reloadAnimated:NO];
+    [pieChartView reloadAnimated:NO withCompletionBlock:nil];
     
     return cell;
 }

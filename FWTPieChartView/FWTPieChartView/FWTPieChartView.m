@@ -100,7 +100,7 @@ float FLOAT_M_PI_ = 3.141592653f;
     self.segments = segmentsTemp;
 }
 
-- (void)reloadAnimated:(BOOL)animated
+- (void)reloadAnimated:(BOOL)animated withCompletionBlock:(void(^)())completionBlock
 {
     FWTPieChartLayer *pieLayer = self.containerLayer.sublayers.firstObject;
     
@@ -119,6 +119,7 @@ float FLOAT_M_PI_ = 3.141592653f;
     [CATransaction commit];
     
     [CATransaction begin];
+    [CATransaction setCompletionBlock:completionBlock];
     [CATransaction setDisableActions:YES];
     
     CABasicAnimation *animation = (CABasicAnimation *)[pieLayer actionForKey:@"animationCompletionPercent"];

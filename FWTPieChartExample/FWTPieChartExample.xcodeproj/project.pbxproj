@@ -21,6 +21,7 @@
 		07DCA07D18F023CD0079DD4F /* FWTPieChartExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DCA07C18F023CD0079DD4F /* FWTPieChartExampleTests.m */; };
 		07DCA08718F024300079DD4F /* FWTiPhoneStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07DCA08618F024300079DD4F /* FWTiPhoneStoryboard.storyboard */; };
 		07DCA08B18F024B80079DD4F /* FWTExamplesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DCA08A18F024B80079DD4F /* FWTExamplesViewController.m */; };
+		07DCA08E18F025480079DD4F /* FWTPieChartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DCA08D18F025480079DD4F /* FWTPieChartTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		07DCA08618F024300079DD4F /* FWTiPhoneStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = FWTiPhoneStoryboard.storyboard; path = UI/FWTiPhoneStoryboard.storyboard; sourceTree = "<group>"; };
 		07DCA08918F024B80079DD4F /* FWTExamplesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FWTExamplesViewController.h; path = UI/FWTExamplesViewController.h; sourceTree = "<group>"; };
 		07DCA08A18F024B80079DD4F /* FWTExamplesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FWTExamplesViewController.m; path = UI/FWTExamplesViewController.m; sourceTree = "<group>"; };
+		07DCA08C18F025480079DD4F /* FWTPieChartTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FWTPieChartTableViewCell.h; path = UI/FWTPieChartTableViewCell.h; sourceTree = "<group>"; };
+		07DCA08D18F025480079DD4F /* FWTPieChartTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FWTPieChartTableViewCell.m; path = UI/FWTPieChartTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +159,8 @@
 				07DCA08618F024300079DD4F /* FWTiPhoneStoryboard.storyboard */,
 				07DCA08918F024B80079DD4F /* FWTExamplesViewController.h */,
 				07DCA08A18F024B80079DD4F /* FWTExamplesViewController.m */,
+				07DCA08C18F025480079DD4F /* FWTPieChartTableViewCell.h */,
+				07DCA08D18F025480079DD4F /* FWTPieChartTableViewCell.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -258,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07DCA08B18F024B80079DD4F /* FWTExamplesViewController.m in Sources */,
+				07DCA08E18F025480079DD4F /* FWTPieChartTableViewCell.m in Sources */,
 				07DCA06818F023CD0079DD4F /* FWTAppDelegate.m in Sources */,
 				07DCA06418F023CD0079DD4F /* main.m in Sources */,
 			);
@@ -381,6 +387,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FWTPieChartExample/FWTPieChartExample-Prefix.pch";
 				INFOPLIST_FILE = "FWTPieChartExample/FWTPieChartExample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -394,6 +401,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FWTPieChartExample/FWTPieChartExample-Prefix.pch";
 				INFOPLIST_FILE = "FWTPieChartExample/FWTPieChartExample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

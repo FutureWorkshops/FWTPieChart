@@ -10,4 +10,7 @@
 
 @interface FWTPieChartTableViewCell : UITableViewCell
 
+@property (nonatomic, weak) IBOutlet FWTPieChartView *pieChartView;
+@property (nonatomic, weak) IBOutlet UILabel *descriptionLabel;
+
 @end

@@ -8,27 +8,28 @@
 
 #import "FWTPieChartTableViewCell.h"
 
-@implementation FWTPieChartTableViewCell
+@interface FWTPieChartTableViewCell()
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
+@property (nonatomic, weak) IBOutlet UIButton *animateButton;
+
+@end
+
+@implementation FWTPieChartTableViewCell
 
 - (void)awakeFromNib
 {
-    // Initialization code
+    [super awakeFromNib];
+    
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    self.animateButton.layer.borderWidth = 1.f;
+    self.animateButton.layer.cornerRadius = 4.f;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+#pragma mark - Private methods
+- (IBAction)_animatePieChart:(id)sender
 {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+    [self.pieChartView reloadAnimated:YES];
 }
 
 @end

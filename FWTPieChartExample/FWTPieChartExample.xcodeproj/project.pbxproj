@@ -22,6 +22,7 @@
 		07DCA08718F024300079DD4F /* FWTiPhoneStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07DCA08618F024300079DD4F /* FWTiPhoneStoryboard.storyboard */; };
 		07DCA08B18F024B80079DD4F /* FWTExamplesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DCA08A18F024B80079DD4F /* FWTExamplesViewController.m */; };
 		07DCA08E18F025480079DD4F /* FWTPieChartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DCA08D18F025480079DD4F /* FWTPieChartTableViewCell.m */; };
+		07DCA0C918F02DE10079DD4F /* libFWTPieChartView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DCA0C818F02DE10079DD4F /* libFWTPieChartView.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		07DCA08A18F024B80079DD4F /* FWTExamplesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FWTExamplesViewController.m; path = UI/FWTExamplesViewController.m; sourceTree = "<group>"; };
 		07DCA08C18F025480079DD4F /* FWTPieChartTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FWTPieChartTableViewCell.h; path = UI/FWTPieChartTableViewCell.h; sourceTree = "<group>"; };
 		07DCA08D18F025480079DD4F /* FWTPieChartTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FWTPieChartTableViewCell.m; path = UI/FWTPieChartTableViewCell.m; sourceTree = "<group>"; };
+		07DCA0C818F02DE10079DD4F /* libFWTPieChartView.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFWTPieChartView.a; path = "../FWTPieChartView/build/Debug-iphoneos/libFWTPieChartView.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07DCA0C918F02DE10079DD4F /* libFWTPieChartView.a in Frameworks */,
 				07DCA05A18F023CD0079DD4F /* CoreGraphics.framework in Frameworks */,
 				07DCA05C18F023CD0079DD4F /* UIKit.framework in Frameworks */,
 				07DCA05818F023CD0079DD4F /* Foundation.framework in Frameworks */,
@@ -104,6 +107,7 @@
 		07DCA05618F023CD0079DD4F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				07DCA0C818F02DE10079DD4F /* libFWTPieChartView.a */,
 				07DCA05718F023CD0079DD4F /* Foundation.framework */,
 				07DCA05918F023CD0079DD4F /* CoreGraphics.framework */,
 				07DCA05B18F023CD0079DD4F /* UIKit.framework */,
@@ -340,7 +344,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -373,6 +377,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -386,8 +391,18 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FWTPieChartExample/FWTPieChartExample-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$SRCROOT/../FWTPieChartView/**",
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				INFOPLIST_FILE = "FWTPieChartExample/FWTPieChartExample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$SRCROOT/../FWTPieChartView/**",
+					"/Users/carlos/Projects/FWTEnhancedPieChartView/FWTPieChartView/build/Debug-iphoneos",
+				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -400,8 +415,18 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FWTPieChartExample/FWTPieChartExample-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$SRCROOT/../FWTPieChartView/**",
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				INFOPLIST_FILE = "FWTPieChartExample/FWTPieChartExample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$SRCROOT/../FWTPieChartView/**",
+					"/Users/carlos/Projects/FWTEnhancedPieChartView/FWTPieChartView/build/Debug-iphoneos",
+				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

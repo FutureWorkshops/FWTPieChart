@@ -7,113 +7,230 @@
 //
 
 #import "FWTExamplesViewController.h"
+#import "FWTPieChartTableViewCell.h"
+
+NSString *const FWTPieChartCellReuseIdentifier = @"FWTPieChartCellReuseIdentifier";
 
 @interface FWTExamplesViewController ()
+
+@property (nonatomic, strong) NSArray *segments;
+@property (nonatomic, strong) NSArray *segmentsWithoutTexts;
+@property (nonatomic, strong) NSArray *segmentsWithInnerTexts;
+@property (nonatomic, strong) NSArray *segmentsWithOuterTexts;
 
 @end
 
 @implementation FWTExamplesViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return 10;
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    FWTPieChartTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:FWTPieChartCellReuseIdentifier forIndexPath:indexPath];
+    FWTPieChartView *pieChartView = cell.pieChartView;
+    pieChartView.font = [UIFont fontWithName:@"HelveticaNeue" size:14.f];
+    pieChartView.segments = self.segments;
     
-    // Configure the cell...
+    switch (indexPath.row) {
+        case 0:{
+            cell.descriptionLabel.text = @"50% inner radius";
+            
+            pieChartView.innerCircleProportionalRadius = 0.5f;
+            pieChartView.shouldDrawPercentages = YES;
+            pieChartView.shouldDrawSeparators = YES;
+            break;
+        }
+        case 1:{
+            cell.descriptionLabel.text = @"0% inner radius";
+
+            pieChartView.innerCircleProportionalRadius = 0.0f;
+            pieChartView.shouldDrawPercentages = YES;
+            pieChartView.shouldDrawSeparators = YES;
+            
+            break;
+        }
+        case 2:{
+            cell.descriptionLabel.text = @"75% inner radius";
+
+            pieChartView.innerCircleProportionalRadius = 0.75f;
+            pieChartView.shouldDrawPercentages = YES;
+            pieChartView.shouldDrawSeparators = YES;
+            
+            break;
+        }
+        case 3:{
+            cell.descriptionLabel.text = @"Without percentages";
+
+            pieChartView.innerCircleProportionalRadius = 0.5f;
+            pieChartView.shouldDrawPercentages = NO;
+            pieChartView.shouldDrawSeparators = YES;
+            
+            break;
+        }
+        case 4:{
+            cell.descriptionLabel.text = @"Without separator lines";
+
+            pieChartView.innerCircleProportionalRadius = 0.5f;
+            pieChartView.shouldDrawPercentages = YES;
+            pieChartView.shouldDrawSeparators = NO;
+            
+            break;
+        }
+        case 5:{
+            cell.descriptionLabel.text = @"Only percentages";
+            
+            pieChartView.segments = self.segmentsWithoutTexts;
+            pieChartView.innerCircleProportionalRadius = 0.5f;
+            pieChartView.shouldDrawPercentages = YES;
+            pieChartView.shouldDrawSeparators = YES;
+            break;
+        }
+        case 6:{
+            cell.descriptionLabel.text = @"Without texts";
+            
+            pieChartView.segments = self.segmentsWithoutTexts;
+            pieChartView.innerCircleProportionalRadius = 0.5f;
+            pieChartView.shouldDrawPercentages = NO;
+            pieChartView.shouldDrawSeparators = YES;
+            
+            break;
+        }
+        case 7:{
+            cell.descriptionLabel.text = @"Only inner texts";
+            
+            pieChartView.segments = self.segmentsWithInnerTexts;
+            pieChartView.innerCircleProportionalRadius = 0.5f;
+            pieChartView.shouldDrawPercentages = YES;
+            pieChartView.shouldDrawSeparators = YES;
+            
+            break;
+        }
+        case 8:{
+            cell.descriptionLabel.text = @"Only outer texts";
+            
+            pieChartView.segments = self.segmentsWithOuterTexts;
+            pieChartView.innerCircleProportionalRadius = 0.5f;
+            pieChartView.shouldDrawPercentages = YES;
+            pieChartView.shouldDrawSeparators = YES;
+            
+            break;
+        }
+        case 9:{
+            cell.descriptionLabel.text = @"Custom fonts";
+            
+            pieChartView.font = [UIFont fontWithName:@"DINCondensed-Bold" size:14.f];
+            pieChartView.innerCircleProportionalRadius = 0.5f;
+            pieChartView.shouldDrawPercentages = YES;
+            pieChartView.shouldDrawSeparators = YES;
+            
+            break;
+        }
+        default:
+            break;
+    }
+    
+    [pieChartView reloadAnimated:NO];
     
     return cell;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+#pragma mark - Lazy loading
+- (NSArray*)segments
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    if (self->_segments == nil){
+        FWTPieChartSegmentData *firstSegment = [FWTPieChartSegmentData pieChartSegmentWithValue:@0.22f
+                                                                                          color:[UIColor colorWithRed:22/255.f green:86/255.f blue:219/255.f alpha:1]
+                                                                                      innerText:@"A"
+                                                                                   andOuterText:@"2"];
+        FWTPieChartSegmentData *secondSegment = [FWTPieChartSegmentData pieChartSegmentWithValue:@0.44f
+                                                                                           color:[UIColor colorWithRed:235/255.f green:81/255.f blue:29/255.f alpha:1]
+                                                                                       innerText:@"B"
+                                                                                    andOuterText:@"4"];
+        FWTPieChartSegmentData *thirdSegment = [FWTPieChartSegmentData pieChartSegmentWithValue:@0.34f
+                                                                                          color:[UIColor colorWithRed:98/255.f green:200/255.f blue:24/255.f alpha:1]
+                                                                                      innerText:@"C"
+                                                                                   andOuterText:@"3"];
+        self->_segments = @[firstSegment, secondSegment, thirdSegment];
+    }
+    
+    return self->_segments;
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+- (NSArray*)segmentsWithOuterTexts
 {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    if (self->_segmentsWithOuterTexts == nil){
+        FWTPieChartSegmentData *firstSegment = [FWTPieChartSegmentData pieChartSegmentWithValue:@0.22f
+                                                                                          color:[UIColor colorWithRed:22/255.f green:86/255.f blue:219/255.f alpha:1]
+                                                                                      innerText:nil
+                                                                                   andOuterText:@"2"];
+        FWTPieChartSegmentData *secondSegment = [FWTPieChartSegmentData pieChartSegmentWithValue:@0.44f
+                                                                                           color:[UIColor colorWithRed:235/255.f green:81/255.f blue:29/255.f alpha:1]
+                                                                                       innerText:nil
+                                                                                    andOuterText:@"4"];
+        FWTPieChartSegmentData *thirdSegment = [FWTPieChartSegmentData pieChartSegmentWithValue:@0.34f
+                                                                                          color:[UIColor colorWithRed:98/255.f green:200/255.f blue:24/255.f alpha:1]
+                                                                                      innerText:nil
+                                                                                   andOuterText:@"3"];
+        self->_segmentsWithOuterTexts = @[firstSegment, secondSegment, thirdSegment];
+    }
+    
+    return self->_segmentsWithOuterTexts;
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+- (NSArray*)segmentsWithInnerTexts
 {
+    if (self->_segmentsWithInnerTexts == nil){
+        FWTPieChartSegmentData *firstSegment = [FWTPieChartSegmentData pieChartSegmentWithValue:@0.22f
+                                                                                          color:[UIColor colorWithRed:22/255.f green:86/255.f blue:219/255.f alpha:1]
+                                                                                      innerText:@"A"
+                                                                                   andOuterText:nil];
+        FWTPieChartSegmentData *secondSegment = [FWTPieChartSegmentData pieChartSegmentWithValue:@0.44f
+                                                                                           color:[UIColor colorWithRed:235/255.f green:81/255.f blue:29/255.f alpha:1]
+                                                                                       innerText:@"B"
+                                                                                    andOuterText:nil];
+        FWTPieChartSegmentData *thirdSegment = [FWTPieChartSegmentData pieChartSegmentWithValue:@0.34f
+                                                                                          color:[UIColor colorWithRed:98/255.f green:200/255.f blue:24/255.f alpha:1]
+                                                                                      innerText:@"C"
+                                                                                   andOuterText:nil];
+        self->_segmentsWithInnerTexts = @[firstSegment, secondSegment, thirdSegment];
+    }
+    
+    return self->_segmentsWithInnerTexts;
 }
-*/
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+- (NSArray*)segmentsWithoutTexts
 {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
+    if (self->_segmentsWithoutTexts == nil){
+        FWTPieChartSegmentData *firstSegment = [FWTPieChartSegmentData pieChartSegmentWithValue:@0.22f
+                                                                                          color:[UIColor colorWithRed:22/255.f green:86/255.f blue:219/255.f alpha:1]
+                                                                                      innerText:nil
+                                                                                   andOuterText:nil];
+        FWTPieChartSegmentData *secondSegment = [FWTPieChartSegmentData pieChartSegmentWithValue:@0.44f
+                                                                                           color:[UIColor colorWithRed:235/255.f green:81/255.f blue:29/255.f alpha:1]
+                                                                                       innerText:nil
+                                                                                    andOuterText:nil];
+        FWTPieChartSegmentData *thirdSegment = [FWTPieChartSegmentData pieChartSegmentWithValue:@0.34f
+                                                                                          color:[UIColor colorWithRed:98/255.f green:200/255.f blue:24/255.f alpha:1]
+                                                                                      innerText:nil
+                                                                                   andOuterText:nil];
+        self->_segmentsWithoutTexts = @[firstSegment, secondSegment, thirdSegment];
+    }
+    
+    return self->_segmentsWithoutTexts;
 }
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

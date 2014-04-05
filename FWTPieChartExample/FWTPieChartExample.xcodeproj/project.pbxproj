@@ -166,17 +166,33 @@
 		07DCA08818F024350079DD4F /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				07DCA0D218F0713A0079DD4F /* Base */,
+				07DCA0D118F071300079DD4F /* Subviews */,
 				07DCA08618F024300079DD4F /* FWTiPhoneStoryboard.storyboard */,
 				07DCA08918F024B80079DD4F /* FWTExamplesViewController.h */,
 				07DCA08A18F024B80079DD4F /* FWTExamplesViewController.m */,
-				07DCA08C18F025480079DD4F /* FWTPieChartTableViewCell.h */,
-				07DCA08D18F025480079DD4F /* FWTPieChartTableViewCell.m */,
 				07DCA0CB18F068E10079DD4F /* FWTInfoViewController.h */,
 				07DCA0CC18F068E10079DD4F /* FWTInfoViewController.m */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		07DCA0D118F071300079DD4F /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				07DCA08C18F025480079DD4F /* FWTPieChartTableViewCell.h */,
+				07DCA08D18F025480079DD4F /* FWTPieChartTableViewCell.m */,
+			);
+			name = Subviews;
+			sourceTree = "<group>";
+		};
+		07DCA0D218F0713A0079DD4F /* Base */ = {
+			isa = PBXGroup;
+			children = (
 				07DCA0CE18F06BF90079DD4F /* FWTBaseNavigationController.h */,
 				07DCA0CF18F06BF90079DD4F /* FWTBaseNavigationController.m */,
 			);
-			name = UI;
+			name = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

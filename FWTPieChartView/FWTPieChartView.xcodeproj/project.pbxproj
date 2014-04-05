@@ -17,6 +17,8 @@
 		07DCA0B618F02CB50079DD4F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07DCA0B418F02CB50079DD4F /* InfoPlist.strings */; };
 		07DCA0B818F02CB50079DD4F /* FWTPieChartViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DCA0B718F02CB50079DD4F /* FWTPieChartViewTests.m */; };
 		07DCA0C318F02CED0079DD4F /* FWTPieChartLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DCA0C118F02CED0079DD4F /* FWTPieChartLayer.m */; };
+		07DCA0C518F02D460079DD4F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DCA0C418F02D460079DD4F /* UIKit.framework */; };
+		07DCA0C718F02D4A0079DD4F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DCA0C618F02D4A0079DD4F /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		07DCA0B718F02CB50079DD4F /* FWTPieChartViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWTPieChartViewTests.m; sourceTree = "<group>"; };
 		07DCA0C118F02CED0079DD4F /* FWTPieChartLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWTPieChartLayer.m; sourceTree = "<group>"; };
 		07DCA0C218F02CED0079DD4F /* FWTPieChartLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWTPieChartLayer.h; sourceTree = "<group>"; };
+		07DCA0C418F02D460079DD4F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		07DCA0C618F02D4A0079DD4F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07DCA0C718F02D4A0079DD4F /* QuartzCore.framework in Frameworks */,
+				07DCA0C518F02D460079DD4F /* UIKit.framework in Frameworks */,
 				07DCA09C18F02CB50079DD4F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -103,6 +109,8 @@
 		07DCA09A18F02CB50079DD4F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				07DCA0C618F02D4A0079DD4F /* QuartzCore.framework */,
+				07DCA0C418F02D460079DD4F /* UIKit.framework */,
 				07DCA09B18F02CB50079DD4F /* Foundation.framework */,
 				07DCA0A918F02CB50079DD4F /* XCTest.framework */,
 				07DCA0AC18F02CB50079DD4F /* UIKit.framework */,

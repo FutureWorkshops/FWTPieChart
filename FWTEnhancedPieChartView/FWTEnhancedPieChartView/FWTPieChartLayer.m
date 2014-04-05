@@ -18,6 +18,7 @@ float FLOAT_M_PI = 3.141592653f;
 
 - (void)dealloc
 {
+    self->_font = nil;
     self->_values = nil;
     self->_colors = nil;
     self->_innerTexts = nil;
@@ -64,7 +65,6 @@ float FLOAT_M_PI = 3.141592653f;
     
     return self;
 }
-
 
 - (void)drawInContext:(CGContextRef)ctx
 {

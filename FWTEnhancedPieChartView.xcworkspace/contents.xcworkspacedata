@@ -5,6 +5,9 @@
       location = "group:FWTEnhancedPieChartView/FWTEnhancedPieChartView.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:FWTPieChartExample/FWTPieChartExample.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>

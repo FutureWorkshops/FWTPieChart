@@ -23,6 +23,7 @@
 		07DCA08B18F024B80079DD4F /* FWTExamplesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DCA08A18F024B80079DD4F /* FWTExamplesViewController.m */; };
 		07DCA08E18F025480079DD4F /* FWTPieChartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DCA08D18F025480079DD4F /* FWTPieChartTableViewCell.m */; };
 		07DCA0C918F02DE10079DD4F /* libFWTPieChartView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DCA0C818F02DE10079DD4F /* libFWTPieChartView.a */; };
+		07DCA0CD18F068E10079DD4F /* FWTInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DCA0CC18F068E10079DD4F /* FWTInfoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		07DCA08C18F025480079DD4F /* FWTPieChartTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FWTPieChartTableViewCell.h; path = UI/FWTPieChartTableViewCell.h; sourceTree = "<group>"; };
 		07DCA08D18F025480079DD4F /* FWTPieChartTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FWTPieChartTableViewCell.m; path = UI/FWTPieChartTableViewCell.m; sourceTree = "<group>"; };
 		07DCA0C818F02DE10079DD4F /* libFWTPieChartView.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFWTPieChartView.a; path = "../FWTPieChartView/build/Debug-iphoneos/libFWTPieChartView.a"; sourceTree = "<group>"; };
+		07DCA0CB18F068E10079DD4F /* FWTInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FWTInfoViewController.h; path = UI/FWTInfoViewController.h; sourceTree = "<group>"; };
+		07DCA0CC18F068E10079DD4F /* FWTInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FWTInfoViewController.m; path = UI/FWTInfoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +168,8 @@
 				07DCA08A18F024B80079DD4F /* FWTExamplesViewController.m */,
 				07DCA08C18F025480079DD4F /* FWTPieChartTableViewCell.h */,
 				07DCA08D18F025480079DD4F /* FWTPieChartTableViewCell.m */,
+				07DCA0CB18F068E10079DD4F /* FWTInfoViewController.h */,
+				07DCA0CC18F068E10079DD4F /* FWTInfoViewController.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -269,6 +274,7 @@
 				07DCA08B18F024B80079DD4F /* FWTExamplesViewController.m in Sources */,
 				07DCA08E18F025480079DD4F /* FWTPieChartTableViewCell.m in Sources */,
 				07DCA06818F023CD0079DD4F /* FWTAppDelegate.m in Sources */,
+				07DCA0CD18F068E10079DD4F /* FWTInfoViewController.m in Sources */,
 				07DCA06418F023CD0079DD4F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,7 +349,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -376,7 +382,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -397,7 +403,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
 				INFOPLIST_FILE = "FWTPieChartExample/FWTPieChartExample-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = "$SRCROOT/../FWTPieChartView/**";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -418,7 +424,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
 				INFOPLIST_FILE = "FWTPieChartExample/FWTPieChartExample-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = "$SRCROOT/../FWTPieChartView/**";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";

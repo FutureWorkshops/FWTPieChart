@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:FWTPieChartView/FWTPieChartView.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:FWTEnhancedPieChartView/FWTEnhancedPieChartView.xcodeproj">
    </FileRef>
    <FileRef

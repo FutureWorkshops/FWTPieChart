@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		07DCA09C18F02CB50079DD4F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DCA09B18F02CB50079DD4F /* Foundation.framework */; };
+		07DCA0A118F02CB50079DD4F /* FWTPieChartView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 07DCA0A018F02CB50079DD4F /* FWTPieChartView.h */; };
+		07DCA0A318F02CB50079DD4F /* FWTPieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DCA0A218F02CB50079DD4F /* FWTPieChartView.m */; };
+		07DCA0AA18F02CB50079DD4F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DCA0A918F02CB50079DD4F /* XCTest.framework */; };
+		07DCA0AB18F02CB50079DD4F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DCA09B18F02CB50079DD4F /* Foundation.framework */; };
+		07DCA0AD18F02CB50079DD4F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DCA0AC18F02CB50079DD4F /* UIKit.framework */; };
+		07DCA0B018F02CB50079DD4F /* libFWTPieChartView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DCA09818F02CB50079DD4F /* libFWTPieChartView.a */; };
+		07DCA0B618F02CB50079DD4F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07DCA0B418F02CB50079DD4F /* InfoPlist.strings */; };
+		07DCA0B818F02CB50079DD4F /* FWTPieChartViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DCA0B718F02CB50079DD4F /* FWTPieChartViewTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		07DCA0AE18F02CB50079DD4F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 07DCA09018F02CB50079DD4F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 07DCA09718F02CB50079DD4F;
+			remoteInfo = FWTPieChartView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		07DCA09618F02CB50079DD4F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				07DCA0A118F02CB50079DD4F /* FWTPieChartView.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		07DCA09818F02CB50079DD4F /* libFWTPieChartView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFWTPieChartView.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		07DCA09B18F02CB50079DD4F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		07DCA09F18F02CB50079DD4F /* FWTPieChartView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FWTPieChartView-Prefix.pch"; sourceTree = "<group>"; };
+		07DCA0A018F02CB50079DD4F /* FWTPieChartView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWTPieChartView.h; sourceTree = "<group>"; };
+		07DCA0A218F02CB50079DD4F /* FWTPieChartView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWTPieChartView.m; sourceTree = "<group>"; };
+		07DCA0A818F02CB50079DD4F /* FWTPieChartViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FWTPieChartViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		07DCA0A918F02CB50079DD4F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		07DCA0AC18F02CB50079DD4F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		07DCA0B318F02CB50079DD4F /* FWTPieChartViewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FWTPieChartViewTests-Info.plist"; sourceTree = "<group>"; };
+		07DCA0B518F02CB50079DD4F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		07DCA0B718F02CB50079DD4F /* FWTPieChartViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWTPieChartViewTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		07DCA09518F02CB50079DD4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07DCA09C18F02CB50079DD4F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07DCA0A518F02CB50079DD4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07DCA0AA18F02CB50079DD4F /* XCTest.framework in Frameworks */,
+				07DCA0AD18F02CB50079DD4F /* UIKit.framework in Frameworks */,
+				07DCA0B018F02CB50079DD4F /* libFWTPieChartView.a in Frameworks */,
+				07DCA0AB18F02CB50079DD4F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		07DCA08F18F02CB50079DD4F = {
+			isa = PBXGroup;
+			children = (
+				07DCA09D18F02CB50079DD4F /* FWTPieChartView */,
+				07DCA0B118F02CB50079DD4F /* FWTPieChartViewTests */,
+				07DCA09A18F02CB50079DD4F /* Frameworks */,
+				07DCA09918F02CB50079DD4F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		07DCA09918F02CB50079DD4F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				07DCA09818F02CB50079DD4F /* libFWTPieChartView.a */,
+				07DCA0A818F02CB50079DD4F /* FWTPieChartViewTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		07DCA09A18F02CB50079DD4F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				07DCA09B18F02CB50079DD4F /* Foundation.framework */,
+				07DCA0A918F02CB50079DD4F /* XCTest.framework */,
+				07DCA0AC18F02CB50079DD4F /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		07DCA09D18F02CB50079DD4F /* FWTPieChartView */ = {
+			isa = PBXGroup;
+			children = (
+				07DCA0A018F02CB50079DD4F /* FWTPieChartView.h */,
+				07DCA0A218F02CB50079DD4F /* FWTPieChartView.m */,
+				07DCA09E18F02CB50079DD4F /* Supporting Files */,
+			);
+			path = FWTPieChartView;
+			sourceTree = "<group>";
+		};
+		07DCA09E18F02CB50079DD4F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				07DCA09F18F02CB50079DD4F /* FWTPieChartView-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		07DCA0B118F02CB50079DD4F /* FWTPieChartViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				07DCA0B718F02CB50079DD4F /* FWTPieChartViewTests.m */,
+				07DCA0B218F02CB50079DD4F /* Supporting Files */,
+			);
+			path = FWTPieChartViewTests;
+			sourceTree = "<group>";
+		};
+		07DCA0B218F02CB50079DD4F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				07DCA0B318F02CB50079DD4F /* FWTPieChartViewTests-Info.plist */,
+				07DCA0B418F02CB50079DD4F /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		07DCA09718F02CB50079DD4F /* FWTPieChartView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07DCA0BB18F02CB50079DD4F /* Build configuration list for PBXNativeTarget "FWTPieChartView" */;
+			buildPhases = (
+				07DCA09418F02CB50079DD4F /* Sources */,
+				07DCA09518F02CB50079DD4F /* Frameworks */,
+				07DCA09618F02CB50079DD4F /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FWTPieChartView;
+			productName = FWTPieChartView;
+			productReference = 07DCA09818F02CB50079DD4F /* libFWTPieChartView.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		07DCA0A718F02CB50079DD4F /* FWTPieChartViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07DCA0BE18F02CB50079DD4F /* Build configuration list for PBXNativeTarget "FWTPieChartViewTests" */;
+			buildPhases = (
+				07DCA0A418F02CB50079DD4F /* Sources */,
+				07DCA0A518F02CB50079DD4F /* Frameworks */,
+				07DCA0A618F02CB50079DD4F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				07DCA0AF18F02CB50079DD4F /* PBXTargetDependency */,
+			);
+			name = FWTPieChartViewTests;
+			productName = FWTPieChartViewTests;
+			productReference = 07DCA0A818F02CB50079DD4F /* FWTPieChartViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		07DCA09018F02CB50079DD4F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Carlos Vidal";
+			};
+			buildConfigurationList = 07DCA09318F02CB50079DD4F /* Build configuration list for PBXProject "FWTPieChartView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 07DCA08F18F02CB50079DD4F;
+			productRefGroup = 07DCA09918F02CB50079DD4F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				07DCA09718F02CB50079DD4F /* FWTPieChartView */,
+				07DCA0A718F02CB50079DD4F /* FWTPieChartViewTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		07DCA0A618F02CB50079DD4F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07DCA0B618F02CB50079DD4F /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		07DCA09418F02CB50079DD4F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07DCA0A318F02CB50079DD4F /* FWTPieChartView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07DCA0A418F02CB50079DD4F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07DCA0B818F02CB50079DD4F /* FWTPieChartViewTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		07DCA0AF18F02CB50079DD4F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 07DCA09718F02CB50079DD4F /* FWTPieChartView */;
+			targetProxy = 07DCA0AE18F02CB50079DD4F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		07DCA0B418F02CB50079DD4F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				07DCA0B518F02CB50079DD4F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		07DCA0B918F02CB50079DD4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		07DCA0BA18F02CB50079DD4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		07DCA0BC18F02CB50079DD4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/FWTPieChartView.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FWTPieChartView/FWTPieChartView-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		07DCA0BD18F02CB50079DD4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/FWTPieChartView.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FWTPieChartView/FWTPieChartView-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		07DCA0BF18F02CB50079DD4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FWTPieChartView/FWTPieChartView-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "FWTPieChartViewTests/FWTPieChartViewTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		07DCA0C018F02CB50079DD4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FWTPieChartView/FWTPieChartView-Prefix.pch";
+				INFOPLIST_FILE = "FWTPieChartViewTests/FWTPieChartViewTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		07DCA09318F02CB50079DD4F /* Build configuration list for PBXProject "FWTPieChartView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07DCA0B918F02CB50079DD4F /* Debug */,
+				07DCA0BA18F02CB50079DD4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		07DCA0BB18F02CB50079DD4F /* Build configuration list for PBXNativeTarget "FWTPieChartView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07DCA0BC18F02CB50079DD4F /* Debug */,
+				07DCA0BD18F02CB50079DD4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		07DCA0BE18F02CB50079DD4F /* Build configuration list for PBXNativeTarget "FWTPieChartViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07DCA0BF18F02CB50079DD4F /* Debug */,
+				07DCA0C018F02CB50079DD4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 07DCA09018F02CB50079DD4F /* Project object */;
+}

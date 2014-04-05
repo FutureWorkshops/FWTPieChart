@@ -26,8 +26,8 @@
 @interface FWTPieChartView : UIView
 
 @property (nonatomic, strong) NSArray *segments;
-
 @property (nonatomic, strong) UIFont *font;
+
 @property (nonatomic, assign) BOOL shouldDrawSeparators;
 @property (nonatomic, assign) BOOL shouldDrawPercentages;
 @property (nonatomic, assign) float innerCircleProportionalRadius;

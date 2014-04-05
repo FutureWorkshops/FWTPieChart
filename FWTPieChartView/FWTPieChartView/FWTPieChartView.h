@@ -73,6 +73,11 @@
 @property (nonatomic, assign) float innerCircleProportionalRadius;
 
 /**
+ Float value which determines the duration of the animation.
+ */
+@property (nonatomic, assign) float animationDuration;
+
+/**
  Adds to the pie chart a previously created segment data object.
  @warning reloadAnimated: must be called to show the segment added.
  */

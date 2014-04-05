@@ -51,8 +51,16 @@ float FLOAT_M_PI_ = 3.141592653f;
     
     if (self != nil){
         self.backgroundColor = [UIColor clearColor];
+        self->_animationDuration = 1.f;
     }
     return self;
+}
+
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    
+    self.animationDuration = 1.f;
 }
 
 - (void)setFrame:(CGRect)frame
@@ -124,6 +132,7 @@ float FLOAT_M_PI_ = 3.141592653f;
     
     CABasicAnimation *animation = (CABasicAnimation *)[pieLayer actionForKey:@"animationCompletionPercent"];
     animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    animation.duration = self.animationDuration;
     animation.fromValue = animated ? @0.f : @1.f;
     animation.toValue = @1.f;
     animation.byValue = @0.1f;

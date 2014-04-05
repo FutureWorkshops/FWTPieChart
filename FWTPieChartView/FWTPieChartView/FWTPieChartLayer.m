@@ -253,7 +253,6 @@ float FLOAT_M_PI = 3.141592653f;
 {
 	if ([event isEqualToString:@"animationCompletionPercent"]){
         CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:event];
-        animation.duration = 1.f;
         return animation;
 	}
 	

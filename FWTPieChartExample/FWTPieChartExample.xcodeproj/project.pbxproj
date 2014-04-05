@@ -24,6 +24,7 @@
 		07DCA08E18F025480079DD4F /* FWTPieChartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DCA08D18F025480079DD4F /* FWTPieChartTableViewCell.m */; };
 		07DCA0C918F02DE10079DD4F /* libFWTPieChartView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DCA0C818F02DE10079DD4F /* libFWTPieChartView.a */; };
 		07DCA0CD18F068E10079DD4F /* FWTInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DCA0CC18F068E10079DD4F /* FWTInfoViewController.m */; };
+		07DCA0D018F06BF90079DD4F /* FWTBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DCA0CF18F06BF90079DD4F /* FWTBaseNavigationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,8 @@
 		07DCA0C818F02DE10079DD4F /* libFWTPieChartView.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFWTPieChartView.a; path = "../FWTPieChartView/build/Debug-iphoneos/libFWTPieChartView.a"; sourceTree = "<group>"; };
 		07DCA0CB18F068E10079DD4F /* FWTInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FWTInfoViewController.h; path = UI/FWTInfoViewController.h; sourceTree = "<group>"; };
 		07DCA0CC18F068E10079DD4F /* FWTInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FWTInfoViewController.m; path = UI/FWTInfoViewController.m; sourceTree = "<group>"; };
+		07DCA0CE18F06BF90079DD4F /* FWTBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FWTBaseNavigationController.h; path = UI/FWTBaseNavigationController.h; sourceTree = "<group>"; };
+		07DCA0CF18F06BF90079DD4F /* FWTBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FWTBaseNavigationController.m; path = UI/FWTBaseNavigationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +173,8 @@
 				07DCA08D18F025480079DD4F /* FWTPieChartTableViewCell.m */,
 				07DCA0CB18F068E10079DD4F /* FWTInfoViewController.h */,
 				07DCA0CC18F068E10079DD4F /* FWTInfoViewController.m */,
+				07DCA0CE18F06BF90079DD4F /* FWTBaseNavigationController.h */,
+				07DCA0CF18F06BF90079DD4F /* FWTBaseNavigationController.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -271,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07DCA0D018F06BF90079DD4F /* FWTBaseNavigationController.m in Sources */,
 				07DCA08B18F024B80079DD4F /* FWTExamplesViewController.m in Sources */,
 				07DCA08E18F025480079DD4F /* FWTPieChartTableViewCell.m in Sources */,
 				07DCA06818F023CD0079DD4F /* FWTAppDelegate.m in Sources */,

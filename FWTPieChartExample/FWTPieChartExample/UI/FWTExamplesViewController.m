@@ -9,7 +9,8 @@
 #import "FWTExamplesViewController.h"
 #import "FWTPieChartTableViewCell.h"
 
-NSString *const FWTPieChartCellReuseIdentifier = @"FWTPieChartCellReuseIdentifier";
+NSString *const FWTPieChartCellReuseIdentifier      = @"FWTPieChartCellReuseIdentifier";
+NSString *const FWTExamplesToInfoSegueIdentifier    = @"FWTExamplesToInfoSegueIdentifier";
 
 @interface FWTExamplesViewController ()
 
@@ -25,6 +26,15 @@ NSString *const FWTPieChartCellReuseIdentifier = @"FWTPieChartCellReuseIdentifie
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    UIBarButtonItem *aboutButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"About" style:UIBarButtonItemStyleDone target:self action:@selector(_presentAboutScreen:)];
+    self.navigationItem.rightBarButtonItem = aboutButtonItem;
+}
+
+#pragma mark - Private methods
+- (void)_presentAboutScreen:(id)sender
+{
+    [self performSegueWithIdentifier:FWTExamplesToInfoSegueIdentifier sender:self];
 }
 
 #pragma mark - Table view data source

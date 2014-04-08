@@ -17,7 +17,7 @@ You can init the view as usual, programatically or with the Xcode's interface bu
 
 	FWTPieChartView *pieChartView = [[FWTPieChartView alloc] initWithFrame:pieChartFrame];
 
-The next step is to add segments to the pie chart, segments which are represented by **FWTPieChartSegmentData** data estructures containing the segment's value, color, inner text and outer text.
+The next step is to add segments to the pie chart, segments which are represented by **FWTPieChartSegmentData** data structures containing the segment's value, color, inner text and outer text.
 
 In the following example a 22% segment with blue color, "A" inner text and "2" outer text is initialized.
 
@@ -28,9 +28,9 @@ FWTPieChartSegmentData *firstSegment = [FWTPieChartSegmentData pieChartSegmentWi
                                                                            andOuterText:@"2"];
 ```
 
-*Note:* remember that the addition of all the values must be lower or equal than 1.f and the inner text must have one character length.
+*Note:* remember that the addition of all the values must be lower or equal than 1.f and the inner text must have one character length (inner and outer texts are optional).
 
-Once time the segments have been created just add them to the pie chart:
+Once the segments have been created just add them to the pie chart:
 
 ```
 [pieChartView addSegment:firstSegment]
@@ -49,7 +49,7 @@ In addition, there are alternative ways to set a pie chart's segments:
 [pieChartView addSegmentWithValue:@0.22f color:[UIColor blueColor] innerText:@"A" andouterText:@"2"];
 ``` 
 
-In this moment the FWTPieChartView knows everything to represent our data, you only need to refresh it to apply the changes:
+In this moment the FWTPieChartView has everything it need to represent our data, you only need to refresh it to apply the changes:
 
 ```
 [pieChartView reloadAnimated:NO withCompletionBlock:completionBlock];
@@ -74,7 +74,7 @@ Another useful methods to manage the pie chart's segments are:
 
 
 ## Customization
-**FWTPieChartView** is a bit flexible, the following properties can be adjusted to make the component suit as mush as possible in your app:
+**FWTPieChartView** is a bit flexible, the following properties can be adjusted to make the component fit as much as possible into your app:
 
 - **font**: UIFont used to draw the pie chart's texts. The font size provided doesn't matter as this is adjusted automatically.
 - **shouldDrawSeparators**: Boolean value which determines if the line between segments must be drawn or not.

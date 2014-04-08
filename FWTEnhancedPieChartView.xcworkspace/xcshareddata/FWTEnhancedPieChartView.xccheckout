@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>64BBAE9C-2FE9-4350-BD1B-3FB93DCAFEF3</string>
+	<key>IDESourceControlProjectName</key>
+	<string>FWTEnhancedPieChartView</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1DA8957D-E094-4345-B1C8-04A269A6CCD5</key>
+		<string>ssh://github.com/FutureWorkshops/FWToolkit.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>meta_templates/meta_template/xcode/FWTEnhancedPieChartView.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1DA8957D-E094-4345-B1C8-04A269A6CCD5</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/FutureWorkshops/FWToolkit.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1DA8957D-E094-4345-B1C8-04A269A6CCD5</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1DA8957D-E094-4345-B1C8-04A269A6CCD5</string>
+			<key>IDESourceControlWCCName</key>
+			<string>FWToolkit</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,14 @@
+project_name: FWTEnhancedPieChartView # required
+class_prefix: FWT # required
+# target_name: FWTEnhancedPieChartView # default: project_name
+# binary_name: FWTEnhancedPieChartView # default: project_name
+# xcode_scheme:
+#     develop:FWTEnhancedPieChartView # default: project_name
+#     testing:FWTEnhancedPieChartView-Testing # default: project_name-Testing
+#     release:FWTEnhancedPieChartView-Release # default: project_name-Release
+# tests_target_name: FWTEnhancedPieChartViewTests # default: project_nameTests
+# xcode_workspace: FWTEnhancedPieChartView.xcworkspace # default: [project_root]/project_name.xcworkspace
+# xcode_project: FWTEnhancedPieChartView/FWTEnhancedPieChartView.xcodeproj # default: [project_root]/project_name/project_name.xcproj
+# source_root: FWTEnhancedPieChartView/FWTEnhancedPieChartView # default: [project_root]/project_name/target_name/
+# tests_source_root: FWTEnhancedPieChartView/FWTEnhancedPieChartViewTests # default: [project_root]/project_name/tests_target_name/
+# frank_root: FWTEnhancedPieChartView/FWTEnhancedPieChartView/Frank # default: [project_root]/project_name/target_name/Frank

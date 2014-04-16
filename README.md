@@ -13,7 +13,7 @@ pod 'FWTPieChart'
 
 ## How it works
 
-You can init the view as usual, programatically or with the Xcode's interface builder. 
+You can init the view as usual, programatically or with the Xcode's interface builder.
 
 	FWTPieChartView *pieChartView = [[FWTPieChartView alloc] initWithFrame:pieChartFrame];
 
@@ -47,7 +47,7 @@ In addition, there are alternative ways to set a pie chart's segments:
 
 ```
 [pieChartView addSegmentWithValue:@0.22f color:[UIColor blueColor] innerText:@"A" andouterText:@"2"];
-``` 
+```
 
 In this moment the FWTPieChartView has everything it need to represent our data, you only need to refresh it to apply the changes:
 
@@ -89,5 +89,9 @@ Another useful methods to manage the pie chart's segments are:
 ![](/Screenshots/screenshot-ios-1.png)
 ![](/Screenshots/screenshot-ios-2.png)
 
-![](/Screenshots/screenshot-ios-4.png) 
-![](/Screenshots/screenshot-ios-3.png) 
+![](/Screenshots/screenshot-ios-4.png)
+![](/Screenshots/screenshot-ios-3.png)
+
+# License
+
+MIT License (MIT)

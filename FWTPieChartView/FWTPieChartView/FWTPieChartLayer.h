@@ -19,6 +19,8 @@
 @property (nonatomic, assign) float animationCompletionPercent;
 @property (nonatomic, assign) float innerCircleProportionalRadius;
 
+@property (nonatomic, strong) UIColor *innerCircleColor;
+
 @property (nonatomic, assign) BOOL shouldDrawPercentages;
 @property (nonatomic, assign) BOOL shouldDrawSeparators;
 

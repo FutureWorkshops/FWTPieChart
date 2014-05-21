@@ -118,6 +118,7 @@ float FLOAT_M_PI_ = 3.141592653f;
     pieLayer.values = [self _values];
     pieLayer.colors = [self _colors];
     pieLayer.innerTexts = [self _innerTexts];
+    pieLayer.innerCircleColor = self.innerCircleColor;
     pieLayer.outerTexts = [self _outerTexts];
     pieLayer.font = self.font;
     pieLayer.shouldDrawSeparators = self.shouldDrawSeparators;
@@ -193,7 +194,8 @@ float FLOAT_M_PI_ = 3.141592653f;
         portionLayer.colors = [self _colors];
         portionLayer.innerTexts = [self _innerTexts];
         portionLayer.outerTexts = [self _outerTexts];
-        portionLayer.backgroundColor = [UIColor whiteColor].CGColor;
+        portionLayer.innerCircleColor = self.innerCircleColor;
+        portionLayer.backgroundColor = [UIColor clearColor].CGColor;
         portionLayer.contentsScale = [UIScreen mainScreen].scale;
         portionLayer.frame = self->_containerLayer.frame;
         

@@ -73,6 +73,12 @@
 @property (nonatomic, assign) float innerCircleProportionalRadius;
 
 /**
+ This UIColor indicates the color of the inner circle
+ @warning if nil white color is used by default
+ */
+@property (nonatomic, strong) UIColor *innerCircleColor;
+
+/**
  Float value which determines the duration of the animation.
  */
 @property (nonatomic, assign) float animationDuration;

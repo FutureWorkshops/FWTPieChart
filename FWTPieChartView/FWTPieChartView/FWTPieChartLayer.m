@@ -57,6 +57,7 @@ float FLOAT_M_PI = 3.141592653f;
         self->_startAngle = source.startAngle;
         self->_innerTexts = source.innerTexts;
         self->_outerTexts = source.outerTexts;
+        self->_innerCircleColor = source.innerCircleColor;
         self->_shouldDrawSeparators = source.shouldDrawSeparators;
         self->_shouldDrawPercentages = source.shouldDrawPercentages;
         self->_animationCompletionPercent = source.animationCompletionPercent;

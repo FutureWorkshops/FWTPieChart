@@ -230,7 +230,7 @@ float FLOAT_M_PI = 3.141592653f;
     }
     
     // Draw inner circle
-    CGContextSetFillColorWithColor(ctx, innerPieColor);
+    CGContextSetFillColorWithColor(ctx, self.innerCircleColor.CGColor);
     CGContextMoveToPoint(ctx, center.x, center.y);
     CGContextAddArc(ctx, center.x, center.y, innerRadius, -FLOAT_M_PI/2, 2*FLOAT_M_PI, 0);
     CGContextClosePath(ctx);
@@ -291,6 +291,16 @@ float FLOAT_M_PI = 3.141592653f;
 - (UIFont*)_percentageFontWithSpaceAvailable:(CGFloat)spaceAvaliable
 {
     return [UIFont fontWithName:self.font.fontName size:spaceAvaliable*0.35f];
+}
+
+#pragma mark - Lazy loading
+- (UIColor*)innerCircleColor
+{
+    if (self->_innerCircleColor == nil){
+        self->_innerCircleColor = [UIColor whiteColor];
+    }
+    
+    return self->_innerCircleColor;
 }
 
 @end

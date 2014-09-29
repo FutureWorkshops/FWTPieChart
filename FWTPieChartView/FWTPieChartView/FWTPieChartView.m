@@ -112,9 +112,11 @@ float FLOAT_M_PI_ = 3.141592653f;
 {
     FWTPieChartLayer *pieLayer = self.containerLayer.sublayers.firstObject;
     
-    [CATransaction begin];
-    [CATransaction setDisableActions:YES];
-    
+    if (animated) {
+        [CATransaction begin];
+        [CATransaction setDisableActions:YES];
+    }
+        
     pieLayer.values = [self _values];
     pieLayer.colors = [self _colors];
     pieLayer.innerTexts = [self _innerTexts];
@@ -124,24 +126,30 @@ float FLOAT_M_PI_ = 3.141592653f;
     pieLayer.shouldDrawSeparators = self.shouldDrawSeparators;
     pieLayer.shouldDrawPercentages = self.shouldDrawPercentages;
     pieLayer.innerCircleProportionalRadius = self.innerCircleProportionalRadius;
+    [pieLayer setNeedsDisplay];
     
-    [CATransaction commit];
-    
-    [CATransaction begin];
-    [CATransaction setCompletionBlock:completionBlock];
-    [CATransaction setDisableActions:YES];
-    
-    CABasicAnimation *animation = (CABasicAnimation *)[pieLayer actionForKey:@"animationCompletionPercent"];
-    animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-    animation.duration = self.animationDuration;
-    animation.fromValue = animated ? @0.f : @1.f;
-    animation.toValue = @1.f;
-    animation.byValue = @0.1f;
-    
-    [pieLayer setAnimationCompletionPercent:((NSNumber*)animation.toValue).floatValue];
-    [pieLayer addAnimation:animation forKey:@"animationCompletionPercent"];
-    
-    [CATransaction commit];
+    if (animated) {
+        [CATransaction commit];
+        
+        [CATransaction begin];
+        [CATransaction setCompletionBlock:completionBlock];
+        [CATransaction setDisableActions:YES];
+        
+        CABasicAnimation *animation = (CABasicAnimation *)[pieLayer actionForKey:@"animationCompletionPercent"];
+        animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+        animation.duration = self.animationDuration;
+        animation.fromValue = animated ? @0.f : @1.f;
+        animation.toValue = @1.f;
+        animation.byValue = @0.1f;
+        
+        [pieLayer setAnimationCompletionPercent:((NSNumber*)animation.toValue).floatValue];
+        [pieLayer addAnimation:animation forKey:@"animationCompletionPercent"];
+        
+        [CATransaction commit];
+    } else {
+        if (completionBlock)
+            completionBlock();
+    }
 }
 
 #pragma mark - Private methods

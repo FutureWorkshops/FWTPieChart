@@ -72,6 +72,12 @@ float FLOAT_M_PI_ = 3.141592653f;
     }
 }
 
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    self.containerLayer.frame = self.bounds;
+    self.containerLayer.position = (CGPoint){ CGRectGetMidX(self.bounds) - CGRectGetMinX(self.frame), CGRectGetMidY(self.bounds) - CGRectGetMinY(self.frame) };
+}
+
 #pragma mark - Public methods
 - (void)addSegment:(FWTPieChartSegmentData*)segmentData
 {

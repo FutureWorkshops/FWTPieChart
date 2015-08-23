@@ -280,7 +280,7 @@ float FLOAT_M_PI = 3.141592653f;
 
 - (UIFont*)_outerLetterFontWithSpaceAvailable:(CGFloat)spaceAvaliable
 {
-    return [UIFont fontWithName:self.font.fontName size:spaceAvaliable*0.58f];
+    return [UIFont fontWithName:self.font.fontName size:spaceAvaliable*0.33f];
 }
 
 - (NSDictionary*)_percentageAttributesWithSpaceAvailable:(CGFloat)spaceAvaliable andTextColor:(UIColor*)color
